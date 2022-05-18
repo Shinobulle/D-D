@@ -1,23 +1,19 @@
 package com.vinciguerra.dd;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowInsets;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
+public class CreationGuidee extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.guided_creation);
         ImageView dragon = (ImageView) findViewById(R.id.imageViewDragon);
         dragon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,12 +21,5 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), "CHRCHR", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    public void guidedCreation  (View v)
-    {
-        Log.d("Dragon", "C'est bon");
-        Intent guided = new Intent(this, CreationGuidee.class);
-        startActivity(guided);
     }
 }

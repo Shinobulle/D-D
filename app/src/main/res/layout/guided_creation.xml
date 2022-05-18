@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".CreationGuidee"
+    >
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/left_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.17" />
+        app:layout_constraintGuide_percent="0.03" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/right_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.83" />
+        app:layout_constraintGuide_percent="0.33" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontal_guideline"
@@ -32,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.51" />
+        app:layout_constraintGuide_begin="212dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontalBntTop_guideline"
@@ -89,51 +90,13 @@
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center"
-        android:text="@string/titre"
-        android:textColor="#BE0117"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/right_guideline"
-        app:layout_constraintStart_toStartOf="@id/left_guideline"
-        app:layout_constraintTop_toTopOf="@id/horizontal_guideline"
-        app:layout_constraintBottom_toBottomOf="@id/horizontal1_guideline"/>
-
-    <Button
-        android:id="@+id/button_guided"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/crea_guided"
-        app:layout_constraintBottom_toBottomOf="@id/horizontalbntBottom_guideline"
-        app:layout_constraintEnd_toEndOf="@id/right_guideline"
-        app:layout_constraintStart_toStartOf="@id/left_guideline"
-        app:layout_constraintTop_toBottomOf="@id/horizontalBntTop_guideline"
-        android:onClick="guidedCreation"/>
-
-
-    <Button
-        android:id="@+id/button_custo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/crea_custom"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalbntBottomCusto_guideline"
-        app:layout_constraintEnd_toStartOf="@+id/right_guideline"
-        app:layout_constraintStart_toStartOf="@+id/left_guideline"
-        app:layout_constraintTop_toTopOf="@+id/horizontalBntTopCusto_guideline" />
-
-    <Button
-        android:id="@+id/button_fiche"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/fiche"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalBntBottomFiche_guideline"
-        app:layout_constraintEnd_toStartOf="@+id/right_guideline"
-        app:layout_constraintStart_toStartOf="@+id/left_guideline"
-        app:layout_constraintTop_toTopOf="@+id/horizontalBntTopFiche_guideline" />
-
-
+        android:text="@string/pres"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal1_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/right_guideline"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

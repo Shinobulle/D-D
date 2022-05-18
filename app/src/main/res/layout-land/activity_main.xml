@@ -126,7 +126,8 @@
             app:layout_constraintStart_toStartOf="@id/right_guideline"
             app:layout_constraintTop_toTopOf="@id/horizontalGuidedTop_guideline"
             app:layout_constraintBottom_toBottomOf="@id/horizontalGuidedBottom_guideline"
-          />
+            android:onClick="guidedCreation"
+            />
 
         <Button
             android:id="@+id/button_custo"
