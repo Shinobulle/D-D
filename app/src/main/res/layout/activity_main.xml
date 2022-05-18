@@ -6,13 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="204dp"
+        android:layout_height="290dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/logoDD" />
+
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="170dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="252dp"
+        android:text="@string/titre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <Button
+            android:id="@+id/button_guided"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crea_guided"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="358dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <Button
+            android:id="@+id/button_custo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crea_custom"
+            tools:layout_editor_absoluteX="151dp"
+            tools:layout_editor_absoluteY="450dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <Button
+            android:id="@+id/button_fiche"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fiche"
+            tools:layout_editor_absoluteX="156dp"
+            tools:layout_editor_absoluteY="551dp" />
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">D&amp;D</string>
+    <string name="titre">Donjons &amp; Dragons : Crée ton personnage </string>
+    <string name="crea_guided">Création guidée</string>
+    <string name="crea_custom">Création customisée</string>
+    <string name="fiche">Fiche de personnage</string>
 </resources>
