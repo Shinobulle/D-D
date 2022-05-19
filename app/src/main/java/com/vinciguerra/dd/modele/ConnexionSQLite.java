@@ -10,16 +10,17 @@ public class ConnexionSQLite extends SQLiteOpenHelper {
     private static final String DB_NAME = "DandD";
     private static final int DB_VERSION = 1;
     private static final String TABLE_NAME ="races";
-    private static final String ID_COL = "Race";
-//    private static final String TAUX_COL = "taux";
+    private static final String ID_COL = "race";
+    private static final String RACE_COL = "sousrace";
 
-    private static final String CREATE_BDD = "CREATE TABLE " + TABLE_NAME + " (" + ID_COL+ " TEXT PRIMARY KEY )";
+    private static final String CREATE_BDD = "CREATE TABLE " + TABLE_NAME + " (" + ID_COL+ " TEXT PRIMARY KEY, " +RACE_COL+" TEXT)";
     private static final String INSERT_MONNAIE = "INSERT INTO `races` (`race`) VALUES\n" +
             "('Elfe'),\n" +
             "('Halfelin'),\n" +
             "('Humain'),\n" +
             "('Nain'),\n" +
             "('Demi-elfe'),\n" +
+            "('Demi-orc'),\n" +
             "('Drakéide'),\n" +
             "('Gnome'),\n" +
             "('Tieffelin');";

@@ -15,4 +15,17 @@
     <string name="choixRace">Choisissez une race</string>
     <string name="annuler">Annuler</string>
     <string name="accueil">Retour à l\'accueil</string>
+
+    <string name="vitesse">Votre vitesse de base est de 9 mètres.</string>
+    <string name="drkCarac">Votre Force augmente de 2 et votre Charisme de 1.</string>
+    <string name="drkAge">Les jeunes drakéides grandissent rapidement. Ils marchent juste quelques heures après l\'éclosion, atteignent la taille et le développement d\'un enfant humain de dix ans à l\'âge de 3 ans, et sont adultes à 15 ans. Ils vivent environ 80 ans.</string>
+    <string name="drkTaille">Les drakéides sont plus grands et plus lourds que les humains, mesurant plus de 1,80 mètre pour un poids moyen de près de 125 kg. Votre taille est Moyenne (M).</string>
+    <string name="drkTrait1">Vous avez une ascendance draconique. Choisissez un type de dragon dans la table ci-dessous. Votre souffle et votre résistance aux dégâts sont déterminés par le type de dragon, comme indiqué dans la table.</string>
+    <string name="drkTrait2">Vous pouvez utiliser votre action pour libérer un souffle d\'énergie destructrice. Votre ascendance draconique détermine la taille, la forme et le type de dégâts de votre souffle.
+        Lorsque vous utilisez votre souffle, toute créature dans la zone de l\'expiration doit faire un jet de sauvegarde, dont le type est déterminé par votre ascendance draconique.
+        Le DD de ce jet de sauvegarde est égal à 8 + votre modificateur de Constitution + votre bonus de maîtrise. En cas d\'échec, la créature subit 2d6 dégâts, ou la moitié de ces dégâts en cas de réussite.
+        Les dégâts augmentent à 3d6 au niveau 6, 4d6 au niveau 11, et 5d6 au niveau 16. Après avoir utilisé votre souffle, vous devez terminer un repos court ou long pour pouvoir \'utiliser à nouveau.</string>
+    <string name="drkTrait3">Vous obtenez la résistance au type de dégâts associé à votre ascendance draconique.</string>
+    <string name="drkTrait4"> </string>
+    <string name="drkLangue">Vous pouvez parler, lire et écrire le commun et le draconique. Le draconique passe pour être l\'une des plus anciennes langues et est souvent utilisé dans l\'étude de la magie. La langue semble cassante pour la plupart des autres créatures, et comprend de nombreuses consonnes dures et sifflantes.</string>
 </resources>
