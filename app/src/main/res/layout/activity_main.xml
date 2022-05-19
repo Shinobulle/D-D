@@ -95,7 +95,7 @@
         android:gravity="center"
         android:text="@string/titre"
         android:textColor="#BE0117"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/right_guideline"
         app:layout_constraintStart_toStartOf="@id/left_guideline"

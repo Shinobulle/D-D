@@ -7,6 +7,8 @@
     tools:context=".CreationGuidee"
     >
 
+<!--    Guideline Vertical -->
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/left_guideline"
         android:layout_width="wrap_content"
@@ -22,32 +24,51 @@
         app:layout_constraintGuide_percent="0.33" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontal_guideline"
+        android:id="@+id/rightInput_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.39" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontal1_guideline"
+        android:id="@+id/leftBnt_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.72" />
+
+<!--     Guideline Horizontal -->
+
+<!--    Partie image et explication-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalImageBottom_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="212dp" />
+        app:layout_constraintGuide_percent="0.29" />
+
+<!--    Partie pour le nom -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalNameBottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
+
+<!--    Partie pour la race-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalRaceTop_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.43" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontalBntTop_guideline"
+        android:id="@+id/horizontalRaceBottom_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.62" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontalbntBottom_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.67" />
+        app:layout_constraintGuide_percent="0.51" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontalBntTopCusto_guideline"
@@ -77,6 +98,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.83" />
 
+<!--     Contenu -->
     <ImageView
         android:id="@+id/imageViewDragon"
         android:layout_width="0dp"
@@ -86,17 +108,86 @@
         app:layout_constraintEnd_toEndOf="@id/right_guideline"
         app:layout_constraintStart_toStartOf="@id/left_guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/horizontal1_guideline"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalImageBottom_guideline"
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewPresentation"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/pres"
-        app:layout_constraintBottom_toTopOf="@+id/horizontal1_guideline"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalImageBottom_guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/right_guideline"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Nom -->
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/nomPerso"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/red_dd"
+        app:layout_constraintTop_toTopOf="@id/horizontalImageBottom_guideline"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalNameBottom_guideline"
+        app:layout_constraintStart_toStartOf="@id/left_guideline"
+        app:layout_constraintEnd_toEndOf="@id/right_guideline"
+        />
+
+    <EditText
+        android:id="@+id/editTextPersonName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toTopOf="@id/horizontalImageBottom_guideline"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalNameBottom_guideline"
+        app:layout_constraintStart_toStartOf="@id/right_guideline"
+        app:layout_constraintEnd_toEndOf="@id/rightInput_guideline"
+        />
+
+    <Button
+        android:id="@+id/buttonValider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/valider"
+        android:textSize="11sp"
+        android:onClick="etapeSuivant"
+        app:layout_constraintTop_toTopOf="@id/horizontalImageBottom_guideline"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalNameBottom_guideline"
+        app:layout_constraintStart_toStartOf="@id/leftBnt_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+         />
+
+    <Button
+        android:id="@+id/buttonAnnuler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/accueil"
+        android:textSize="11sp"
+        android:onClick="etapePrecedente"
+        app:layout_constraintTop_toTopOf="@id/horizontalNameBottom_guideline"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalRaceTop_guideline"
+        app:layout_constraintStart_toStartOf="@id/leftBnt_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+    />
+    <!-- Race -->
+
+    <Spinner
+        android:id="@+id/spinnerRace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/horizontalImageBottom_guideline"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalNameBottom_guideline"
+        app:layout_constraintStart_toStartOf="@id/right_guideline"
+        app:layout_constraintEnd_toEndOf="@id/rightInput_guideline"
+         />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

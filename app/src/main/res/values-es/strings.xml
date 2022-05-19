@@ -10,4 +10,9 @@
         Si vous jouez une classe pouvant lancer des sorts, il est conseillé de voir avec le maître de jeu pour ce qui est possible d\'utiliser.
         (les sorts ne sont pas abordées dans l\'application)
     </string>
+    <string name="nomPerso">Entrée votre nom :</string>
+    <string name="valider">Valider</string>
+    <string name="choixRace">Choisissez une race</string>
+    <string name="annuler">Annuler</string>
+    <string name="accueil">Retour à l\'accueil</string>
 </resources>

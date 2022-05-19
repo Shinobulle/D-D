@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void guidedCreation  (View v)
     {
-        Log.d("Dragon", "C'est bon");
         Intent guided = new Intent(this, CreationGuidee.class);
         startActivity(guided);
     }
