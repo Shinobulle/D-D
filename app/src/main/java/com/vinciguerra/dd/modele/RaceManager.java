@@ -40,7 +40,16 @@ public class RaceManager {
         switch (race){
             case "Drakéide":
                 joueur = new Drakeide();
-                joueur.setInfo(context, race, R.string.drkCarac, R.string.drkAge, R.string.drkTaille, R.string.vitesse, R.string.drkTrait1,R.string.drkTrait2,R.string.drkTrait3, R.string.drkTrait4, R.string.drkLangue);
+                joueur.setInfo(context, race, R.string.drkCarac,
+                        R.string.drkAge,
+                        R.string.drkTaille,
+                        R.string.vitesse,
+                        R.string.drkTrait1,
+                        R.string.drkTrait2,R.string.drkTrait3,
+                        R.string.drkTrait4,
+                        R.string.drkLangue, R.string.drkTitreTrait1,
+                        R.string.drkTitreTrait2, R.string.drkTitreTrait3,
+                        R.string.drkTitreTrait4);
                 break;
             case "Demi-elfe":
                 break;

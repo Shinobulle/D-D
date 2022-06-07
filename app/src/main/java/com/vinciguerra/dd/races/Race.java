@@ -16,8 +16,16 @@ public abstract class Race {
     private String trait3;
     private String trait4;
     private String langues;
+    private String titreTrait1;
+    private String titreTrait2;
+    private String titreTrait3;
+    private String titreTrait4;
 
-    public abstract void setInfo(Context context, String race, int drkCarac, int drkAge, int drkTaille, int vitesse, int drkTrait1, int drkTrait2, int drkTrait3, int drkTrait4, int drkLangue);
+    public abstract void setInfo(Context context, String race, int drkCarac,
+                                 int drkAge, int drkTaille, int vitesse,
+                                 int drkTrait1, int drkTrait2, int drkTrait3,
+                                 int drkTrait4, int drkLangue, int titreTrait1,
+                                 int titreTrait2, int titreTrait3, int titreTrait4);
 
 
     // Définir espece
@@ -106,5 +114,34 @@ public abstract class Race {
         return langues;
     }
 
+    public void setTitreTrait1(String titreTrait1) {
+        this.titreTrait1 = titreTrait1;
+    }
+
+    public String getTitreTrait1() {
+        return titreTrait1;
+    }
+
+    public void setTitreTrait2(String titreTrait2) {
+        this.titreTrait2 = titreTrait2;
+    }
+
+    public String getTitreTrait2() {
+        return titreTrait2;
+    }
+    public void setTitreTrait3(String titreTrait3) {
+        this.titreTrait3 = titreTrait3;
+    }
+
+    public String getTitreTrait3() {
+        return titreTrait3;
+    }
+    public void setTitreTrait4(String titreTrait4) {
+        this.titreTrait4 = titreTrait4;
+    }
+
+    public String getTitreTrait4() {
+        return titreTrait4;
+    }
 
 }

@@ -27,6 +27,7 @@ import java.util.Map;
 public class CreationGuidee extends AppCompatActivity {
     protected String  dragon = "Dragon";
     protected int etape;
+    public String nomPersonnage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +48,74 @@ public class CreationGuidee extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 TextView text = (TextView) findViewById(R.id.textViewPresentation);
+                TextView titreCarac = (TextView) findViewById(R.id.textViewTitreCarac);
+                TextView carac = (TextView) findViewById(R.id.textViewCarac);
+                TextView titreAge = (TextView) findViewById(R.id.textViewTitreAge);
+                TextView age = (TextView) findViewById(R.id.textViewAge);
+                TextView titreTaille = (TextView) findViewById(R.id.textViewTitreTaille);
+                TextView taille = (TextView) findViewById(R.id.textViewTaille);
+                TextView titreVitesse = (TextView) findViewById(R.id.textViewTitreSpeed);
+                TextView vitesse = (TextView) findViewById(R.id.textViewSpeed);
+                TextView titreTrait1 = (TextView) findViewById(R.id.textViewTitreTrait1);
+                TextView trait1 = (TextView) findViewById(R.id.textViewTrait1);
+                TextView titreTrait2 = (TextView) findViewById(R.id.textViewTitreTrait2);
+                TextView trait2 = (TextView) findViewById(R.id.textViewTrait2);
+                TextView titreTrait3 = (TextView) findViewById(R.id.textViewTitreTrait3);
+                TextView trait3 = (TextView) findViewById(R.id.textViewTrait3);
+                TextView titreTrait4 = (TextView) findViewById(R.id.textViewTitreTrait4);
+                TextView trait4 = (TextView) findViewById(R.id.textViewTrait4);
+                TextView titreLangue = (TextView) findViewById(R.id.textViewTitreLangues);
+                TextView langue = (TextView) findViewById(R.id.textViewLangue);
+
                 if (etape == 1){
                     String race = parentView.getItemAtPosition(position).toString();
                     if (!race.equals("")){
                         RaceManager.getRace(race, getBaseContext(), selectedItemView);
-                        TextView titreCarac = (TextView) findViewById(R.id.textViewTitreCarac);
-                        titreCarac.setText("Amélioration de caractéristique");
-                        TextView carac = (TextView) findViewById(R.id.textViewCarac);
+                        titreCarac.setText(R.string.carac);
                         carac.setText(RaceManager.joueur.getCarac());
-                        carac.setMovementMethod(new ScrollingMovementMethod());
+                        titreAge.setText(R.string.titreAge);
+                        titreTaille.setText(R.string.titreTaille);
+                        taille.setText(RaceManager.joueur.getTaille());
+                        age.setText(RaceManager.joueur.getAge());
+                        titreVitesse.setText(R.string.titreVitesse);
+                        vitesse.setText(RaceManager.joueur.getVitesse());
+                        titreTrait1.setText(RaceManager.joueur.getTitreTrait1());
+                        trait1.setText(RaceManager.joueur.getTrait1());
+                        titreTrait2.setText(RaceManager.joueur.getTitreTrait2());
+                        trait2.setText(RaceManager.joueur.getTrait2());
+                        titreTrait3.setText(RaceManager.joueur.getTitreTrait3());
+                        trait3.setText(RaceManager.joueur.getTrait3());
+
+                        if (RaceManager.joueur.getEspece().equals( "Drakéide")){
+                            titreTrait4.setText(R.string.titrelangue);
+                            trait4.setText(RaceManager.joueur.getLangues());
+                        }
+                        else {
+                            titreTrait4.setText(RaceManager.joueur.getTitreTrait4());
+                            trait4.setText(RaceManager.joueur.getTrait4());
+                            titreLangue.setText(R.string.titrelangue);
+                            langue.setText(RaceManager.joueur.getLangues());
+                        }
+                    }
+                    else {
+                        titreCarac.setText("");
+                        carac.setText("");
+                        titreAge.setText("");
+                        titreTaille.setText("");
+                        taille.setText("");
+                        age.setText("");
+                        titreVitesse.setText("");
+                        vitesse.setText("");
+                        titreTrait1.setText("");
+                        trait1.setText("");
+                        titreTrait2.setText("");
+                        trait2.setText("");
+                        titreTrait3.setText("");
+                        trait3.setText("");
+                        titreTrait4.setText("");
+                        trait4.setText("");
+                        titreLangue.setText("");
+                        langue.setText("");
                     }
                     Log.d("Dragon", "onItemSelected: "+ spinnerRace.getSelectedItem().toString());
                 }
@@ -77,6 +137,10 @@ public class CreationGuidee extends AppCompatActivity {
     public void etapeSuivant (View v){
         Log.d(dragon, "etapeSuivant: "+ etape);
         TextView text = (TextView) findViewById(R.id.textViewName);
+        Button annuler = (Button) findViewById(R.id.buttonAnnuler);
+        TextView textpres = (TextView) findViewById(R.id.textViewPresentation);
+        Spinner race = (Spinner) findViewById(R.id.spinnerRace);
+        String racePersonnage = (race).getSelectedItem().toString();
         switch (etape){
             case 0 :
                 // Pour passer du prénom à la race
@@ -87,16 +151,24 @@ public class CreationGuidee extends AppCompatActivity {
                 }else{
                     text.setText(getText(R.string.choixRace));
                     name.setVisibility(View.GONE);
-                    Spinner race = (Spinner) findViewById(R.id.spinnerRace);
+                    nomPersonnage = name2;
+                    textpres.setText("Nom du personnage : "+name2+"\n");
                     race.setVisibility(View.VISIBLE);
-                    Button annuler = (Button) findViewById(R.id.buttonAnnuler);
                     annuler.setText(getText(R.string.annuler));
                     etape = 1;
                     Log.d(dragon, "etapeSuivantCase 0: fini");
                 }
                 break;
             case 1 :
-                // Pour passer de la race à la sous race (si cela est possible)
+                if (!racePersonnage.equals("")){
+                    Toast.makeText(getBaseContext(), "CHRCHR", Toast.LENGTH_SHORT).show();
+                    Log.d(dragon, "etapePrecedentCase 1: "+ etape);
+                    String personnage = (textpres.getText().toString()) + "La race : " + racePersonnage;
+                    textpres.setText(personnage);
+                    etape = 2;
+                }else{
+                    Toast.makeText(getBaseContext(), "Ce n'est pas une race !", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
 
@@ -110,6 +182,8 @@ public class CreationGuidee extends AppCompatActivity {
     public void etapePrecedente (View v){
         Log.d(dragon, "etapePrecedente: "+ etape);
         TextView text = (TextView) findViewById(R.id.textViewName);
+        Button annuler = (Button) findViewById(R.id.buttonAnnuler);
+        TextView textpres = (TextView) findViewById(R.id.textViewPresentation);
         switch (etape){
             case 0:
                 // retour à l'accueil
@@ -122,11 +196,14 @@ public class CreationGuidee extends AppCompatActivity {
                 name.setVisibility(View.VISIBLE);
                 Spinner race = (Spinner) findViewById(R.id.spinnerRace);
                 race.setVisibility(View.GONE);
-                Button annuler = (Button) findViewById(R.id.buttonAnnuler);
                 annuler.setText(getText(R.string.accueil));
-//                TextView textpres = (TextView) findViewById(R.id.textViewPresentation);
-//                textpres.setText(getText(R.string.pres));
+                textpres.setText(getText(R.string.pres));
                 etape = 0;
+                Log.d(dragon, "etapePrecedentCase 1: "+ etape);
+                break;
+            case 2 :
+                textpres.setText("Nom du personnage : "+nomPersonnage+"\n");
+                etape = 1;
                 Log.d(dragon, "etapePrecedentCase 1: "+ etape);
                 break;
         }
