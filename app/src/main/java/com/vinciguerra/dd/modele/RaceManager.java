@@ -36,6 +36,7 @@ public class RaceManager {
             c.close();}
         return tRaces;
     }
+
     public static void getRace (String race, Context context, View v){
         switch (race){
             case "Drakéide":

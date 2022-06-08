@@ -5,6 +5,8 @@ import android.content.res.Resources;
 
 import com.vinciguerra.dd.R;
 
+import java.util.Map;
+
 public abstract class Race {
     private String espece;
     private String carac;
@@ -144,4 +146,5 @@ public abstract class Race {
         return titreTrait4;
     }
 
+    public abstract Map<String, String> getCouleur();
 }

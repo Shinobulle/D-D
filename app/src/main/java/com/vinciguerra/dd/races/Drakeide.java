@@ -5,8 +5,9 @@ import android.content.res.Resources;
 
 import com.vinciguerra.dd.R;
 
-public class Drakeide extends Race{
+import java.util.HashMap;
 
+public class Drakeide extends Race{
 
 
     public void setInfo (Context context, String race, int carac, int age, int taille, int vitesse,
@@ -29,6 +30,20 @@ public class Drakeide extends Race{
         setTitreTrait4(res.getString(titreTrait4));
     }
 
+    public HashMap<String, String> getCouleur(){
+        HashMap<String, String> couleur = new HashMap<String, String>();
+        couleur.put("Dragon Blanc", "Froid");
+        couleur.put("Dragon Bleu", "Foudre");
+        couleur.put("Dragon Noir", "Acide");
+        couleur.put("Dragon Rouge", "Feu");
+        couleur.put("Dragon Vert", "Poison");
+        couleur.put("Dragon Airain", "Feu");
+        couleur.put("Dragon Argent", "Froid");
+        couleur.put("Dragon Bronze", "Foudre");
+        couleur.put("Dragon Cuivre", "Acide");
+        couleur.put("Dragon Or", "Feu");
+        return couleur;
+    }
 
 
 }
