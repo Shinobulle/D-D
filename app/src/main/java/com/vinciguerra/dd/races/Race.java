@@ -146,5 +146,5 @@ public abstract class Race {
         return titreTrait4;
     }
 
-    public abstract Map<String, String> getCouleur();
+    public abstract Map<String, String> getSousEspece();
 }

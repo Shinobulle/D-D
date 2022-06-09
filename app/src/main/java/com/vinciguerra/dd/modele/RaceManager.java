@@ -30,7 +30,6 @@ public class RaceManager {
         if(c.getCount() > 0){
             c.moveToFirst();
             while(c.moveToNext()){
-                Log.d("Dragon", "getListRace: " + c.getString(0));
                 tRaces.put(c.getString(0),c.getString(1));
             }
             c.close();}

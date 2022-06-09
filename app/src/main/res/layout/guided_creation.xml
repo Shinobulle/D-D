@@ -215,12 +215,13 @@
         android:id="@+id/spinnerRace"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintTop_toTopOf="@id/horizontalImageBottom_guideline"
         app:layout_constraintBottom_toBottomOf="@id/horizontalNameBottom_guideline"
         app:layout_constraintStart_toStartOf="@id/rightLogo_guideline"
         app:layout_constraintEnd_toEndOf="@id/rightInput_guideline"
          />
+
     <!-- Caractéristiques de la race -->
 
     <androidx.core.widget.NestedScrollView

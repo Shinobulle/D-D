@@ -13,6 +13,9 @@
     <string name="nomPerso">Entrez votre nom de personnage :</string>
     <string name="valider">Valider</string>
     <string name="choixRace">Choisissez une race</string>
+    <string name="choixCouleur">Choisissez la couleur de votre ascendance draconique</string>
+    <string name="sousEspece">Choisissez votre sous-Espèce</string>
+    <string name="classe">Choisissez votre classe</string>
     <string name="annuler">Annuler</string>
     <string name="accueil">Retour à l\'accueil</string>
     <string name="carac">Amélioration de caractéristique.</string>
