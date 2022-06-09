@@ -47,5 +47,8 @@
     <string name="DVMoyGuerrier">6</string>
     <string name="maitriseGuerrier">Force, Constitution</string>
     <string name="competenceGuerrier">Acrobaties, Athlétisme, Dressage, Histoire, Intimidation, Intuition, Perception et Survie</string>
-    <string name="equipementGuerrier">TA MERE</string>
+    <string name="equipementGuerrier">En cours</string>
+    <string name="titrePDV1"><b>DV :</b></string>
+    <string name="titrePDV2">PV au niveau 1 :</string>
+    <string name="titrePDV3">PV aux niveaux suivants :</string>
 </resources>

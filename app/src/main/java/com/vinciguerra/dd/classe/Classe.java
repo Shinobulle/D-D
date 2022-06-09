@@ -3,6 +3,8 @@ package com.vinciguerra.dd.classe;
 import android.content.Context;
 import android.content.res.Resources;
 
+import com.vinciguerra.dd.R;
+
 public class Classe {
     private String nomClasse;
     private String PDV;
@@ -16,9 +18,9 @@ public class Classe {
         setNomClasse(res.getString(nomClasse));
         setDVClasse(res.getString(DVCLasse));
         setDVMoyClasse(res.getString(DVMoyClasse));
-        setPDV("<b>DV :</b> 1d"+ getDVClasse() + "+ votre modificateur de Constitution \n" +
-                "<b>PV au niveau 1 : </b>"+ getDVClasse() + "+ votre modificateur de Constitution \n" +
-                "<b>PV aux niveaux suivants :</b> 1d"+ getDVClasse() +" (ou "+ getDVMoyClasse() +") + votre modificateur de Constitution \n");
+        setPDV(res.getString(R.string.titrePDV1)+" 1d"+ getDVClasse() + "+ votre modificateur de Constitution \n" +
+                res.getString(R.string.titrePDV2)+" "+ getDVClasse() + "+ votre modificateur de Constitution \n" +
+                res.getString(R.string.titrePDV3)+"1d"+ getDVClasse() +" (ou "+ getDVMoyClasse() +") + votre modificateur de Constitution \n");
         setMaitrise(res.getString(maitrise)+ res.getString(competence));
         setEquipement(res.getString(equipement));
     }
