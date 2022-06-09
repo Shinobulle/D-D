@@ -20,6 +20,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.vinciguerra.dd.modele.ClasseManager;
 import com.vinciguerra.dd.modele.RaceManager;
 import com.vinciguerra.dd.races.Race;
 
@@ -29,7 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CreationGuidee extends AppCompatActivity {
-    protected String dragon = "Dragon";
+    public static String dragon = "Dragon";
     protected int etape;
     public String personnage;
     public String nomPersonnage;
@@ -74,56 +75,54 @@ public class CreationGuidee extends AppCompatActivity {
                 TextView titreLangue = (TextView) findViewById(R.id.textViewTitreLangues);
                 TextView langue = (TextView) findViewById(R.id.textViewLangue);
 
-                if (etape == 1) {
-                    String race = parentView.getItemAtPosition(position).toString();
-                    if (!race.equals("")) {
-                        RaceManager.getRace(race, getBaseContext(), selectedItemView);
-                        titreCarac.setText(R.string.carac);
-                        carac.setText(RaceManager.joueur.getCarac());
-                        titreAge.setText(R.string.titreAge);
-                        titreTaille.setText(R.string.titreTaille);
-                        taille.setText(RaceManager.joueur.getTaille());
-                        age.setText(RaceManager.joueur.getAge());
-                        titreVitesse.setText(R.string.titreVitesse);
-                        vitesse.setText(RaceManager.joueur.getVitesse());
-                        titreTrait1.setText(RaceManager.joueur.getTitreTrait1());
-                        trait1.setText(RaceManager.joueur.getTrait1());
-                        titreTrait2.setText(RaceManager.joueur.getTitreTrait2());
-                        trait2.setText(RaceManager.joueur.getTrait2());
-                        titreTrait3.setText(RaceManager.joueur.getTitreTrait3());
-                        trait3.setText(RaceManager.joueur.getTrait3());
+                switch (etape) {
+                    case 1 :
+                        String race = parentView.getItemAtPosition(position).toString();
+                        if (!race.equals("")) {
+                            RaceManager.getRace(race, getBaseContext());
+                            titreCarac.setText(R.string.carac);
+                            carac.setText(RaceManager.joueur.getCarac());
+                            titreAge.setText(R.string.titreAge);
+                            age.setText(RaceManager.joueur.getAge());
+                            titreTaille.setText(R.string.titreTaille);
+                            taille.setText(RaceManager.joueur.getTaille());
+                            titreVitesse.setText(R.string.titreVitesse);
+                            vitesse.setText(RaceManager.joueur.getVitesse());
+                            titreTrait1.setText(RaceManager.joueur.getTitreTrait1());
+                            trait1.setText(RaceManager.joueur.getTrait1());
+                            titreTrait2.setText(RaceManager.joueur.getTitreTrait2());
+                            trait2.setText(RaceManager.joueur.getTrait2());
+                            titreTrait3.setText(RaceManager.joueur.getTitreTrait3());
+                            trait3.setText(RaceManager.joueur.getTrait3());
 
-                        if (RaceManager.joueur.getEspece().equals("Drakéide")) {
-                            titreTrait4.setText(R.string.titrelangue);
-                            trait4.setText(RaceManager.joueur.getLangues());
+                            if (RaceManager.joueur.getEspece().equals("Drakéide")) {
+                                titreTrait4.setText(R.string.titrelangue);
+                                trait4.setText(RaceManager.joueur.getLangues());
+                            } else {
+                                titreTrait4.setText(RaceManager.joueur.getTitreTrait4());
+                                trait4.setText(RaceManager.joueur.getTrait4());
+                                titreLangue.setText(R.string.titrelangue);
+                                langue.setText(RaceManager.joueur.getLangues());
+                            }
+                            racePersonnage = RaceManager.joueur.getEspece();
                         } else {
-                            titreTrait4.setText(RaceManager.joueur.getTitreTrait4());
-                            trait4.setText(RaceManager.joueur.getTrait4());
-                            titreLangue.setText(R.string.titrelangue);
-                            langue.setText(RaceManager.joueur.getLangues());
+                            clearscroll(selectedItemView);
                         }
-                        racePersonnage = RaceManager.joueur.getEspece();
-                    } else {
-                        titreCarac.setText("");
-                        carac.setText("");
-                        titreAge.setText("");
-                        titreTaille.setText("");
-                        taille.setText("");
-                        age.setText("");
-                        titreVitesse.setText("");
-                        vitesse.setText("");
-                        titreTrait1.setText("");
-                        trait1.setText("");
-                        titreTrait2.setText("");
-                        trait2.setText("");
-                        titreTrait3.setText("");
-                        trait3.setText("");
-                        titreTrait4.setText("");
-                        trait4.setText("");
-                        titreLangue.setText("");
-                        langue.setText("");
-                    }
+                        break;
 
+                    case 3 :
+                        String classe = parentView.getItemAtPosition(position).toString();
+                        if (!classe.equals("")){
+                            Log.d("Dragon", "classe choisis : " + classe);
+                            ClasseManager.getClasse(getBaseContext(), classe);
+                            titreCarac.setText(R.string.titrePDV);
+                            carac.setText(ClasseManager.classeJoueur.getPDV());
+                            titreAge.setText(R.string.titreMaitrises);
+                            age.setText(ClasseManager.classeJoueur.getMaitrise());
+                            titreTaille.setText(R.string.titreEquipement);
+                            taille.setText(ClasseManager.classeJoueur.getEquipement());
+                        }
+                        break;
                 }
             }
 
@@ -202,7 +201,7 @@ public class CreationGuidee extends AppCompatActivity {
                     }
                     sousEspecePersonnage = raceChoisi;
                     textpres.setText(personnage);
-                    spinnerRace.setVisibility(View.GONE);
+                    chargerSpinner(R.id.spinnerRace, ClasseManager.getListClasse());
                     text.setText(getText(R.string.classe));
                     etape = 3;
                 }else{
@@ -255,7 +254,6 @@ public class CreationGuidee extends AppCompatActivity {
                 personnage = "Nom du personnage : " + nomPersonnage + "\n"
                         + "la race : "+ racePersonnage;
                 textpres.setText(personnage);
-                spinnerRace.setVisibility(View.VISIBLE);
                 afficherSousEspece(v, racePersonnage);
                 text.setText(getText(R.string.sousEspece));
                 etape=2;

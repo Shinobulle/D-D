@@ -39,4 +39,13 @@
     <string name="drkTrait4"> </string>
     <string name="titrelangue">Langues.</string>
     <string name="drkLangue">Vous pouvez parler, lire et écrire le commun et le draconique. Le draconique passe pour être l\'une des plus anciennes langues et est souvent utilisé dans l\'étude de la magie. La langue semble cassante pour la plupart des autres créatures, et comprend de nombreuses consonnes dures et sifflantes.</string>
+    <string name="titrePDV">Points de Vie</string>
+    <string name="titreMaitrises">Maîtrises</string>
+    <string name="titreEquipement">Equipement</string>
+    <string name="nomGuerrier">Guerrier</string>
+    <string name="DVguerrier">10</string>
+    <string name="DVMoyGuerrier">6</string>
+    <string name="maitriseGuerrier">Force, Constitution</string>
+    <string name="competenceGuerrier">Acrobaties, Athlétisme, Dressage, Histoire, Intimidation, Intuition, Perception et Survie</string>
+    <string name="equipementGuerrier">TA MERE</string>
 </resources>

@@ -36,7 +36,7 @@ public class RaceManager {
         return tRaces;
     }
 
-    public static void getRace (String race, Context context, View v){
+    public static void getRace (String race, Context context){
         switch (race){
             case "Drakéide":
                 joueur = new Drakeide();
