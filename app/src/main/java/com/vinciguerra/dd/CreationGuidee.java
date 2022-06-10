@@ -77,7 +77,7 @@ public class CreationGuidee extends AppCompatActivity {
                 TextView trait4 = (TextView) findViewById(R.id.textViewTrait4);
                 TextView titreLangue = (TextView) findViewById(R.id.textViewTitreLangues);
                 TextView langue = (TextView) findViewById(R.id.textViewLangue);
-
+                clearscroll(selectedItemView);
                 switch (etape) {
                     case 1 :
                         String race = parentView.getItemAtPosition(position).toString();
@@ -98,7 +98,7 @@ public class CreationGuidee extends AppCompatActivity {
                             titreTrait3.setText(RaceManager.joueur.getTitreTrait3());
                             trait3.setText(RaceManager.joueur.getTrait3());
 
-                            if (RaceManager.joueur.getEspece().equals("Drakéide")) {
+                            if (RaceManager.joueur.getEspece().equals("Drakéide") || RaceManager.joueur.getEspece().equals("Demi-elfe")) {
                                 titreTrait4.setText(R.string.titrelangue);
                                 trait4.setText(RaceManager.joueur.getLangues());
                             } else {

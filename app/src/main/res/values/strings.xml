@@ -30,9 +30,9 @@
     <string name="drkTrait1">Vous avez une ascendance draconique. Choisissez un type de dragon dans la table ci-dessous. Votre souffle et votre résistance aux dégâts sont déterminés par le type de dragon, comme indiqué dans la table.</string>
     <string name="drkTitreTrait2">Souffle.</string>
     <string name="drkTrait2">Vous pouvez utiliser votre action pour libérer un souffle d\'énergie destructrice. Votre ascendance draconique détermine la taille, la forme et le type de dégâts de votre souffle.
-        Lorsque vous utilisez votre souffle, toute créature dans la zone de l\'expiration doit faire un jet de sauvegarde, dont le type est déterminé par votre ascendance draconique.
-        Le DD de ce jet de sauvegarde est égal à 8 + votre modificateur de Constitution + votre bonus de maîtrise. En cas d\'échec, la créature subit 2d6 dégâts, ou la moitié de ces dégâts en cas de réussite.
-        Les dégâts augmentent à 3d6 au niveau 6, 4d6 au niveau 11, et 5d6 au niveau 16. Après avoir utilisé votre souffle, vous devez terminer un repos court ou long pour pouvoir \'utiliser à nouveau.</string>
+        \n Lorsque vous utilisez votre souffle, toute créature dans la zone de l\'expiration doit faire un jet de sauvegarde, dont le type est déterminé par votre ascendance draconique.
+        \n Le DD de ce jet de sauvegarde est égal à 8 + votre modificateur de Constitution + votre bonus de maîtrise. En cas d\'échec, la créature subit 2d6 dégâts, ou la moitié de ces dégâts en cas de réussite.
+        \n Les dégâts augmentent à 3d6 au niveau 6, 4d6 au niveau 11, et 5d6 au niveau 16. Après avoir utilisé votre souffle, vous devez terminer un repos court ou long pour pouvoir \'utiliser à nouveau.</string>
     <string name="drkTitreTrait3">Résistance aux dégâts.</string>
     <string name="drkTrait3">Vous obtenez la résistance au type de dégâts associé à votre ascendance draconique.</string>
     <string name="drkTitreTrait4"></string>
@@ -40,8 +40,12 @@
     <string name="titrelangue">Langues.</string>
     <string name="drkLangue">Vous pouvez parler, lire et écrire le commun et le draconique. Le draconique passe pour être l\'une des plus anciennes langues et est souvent utilisé dans l\'étude de la magie. La langue semble cassante pour la plupart des autres créatures, et comprend de nombreuses consonnes dures et sifflantes.</string>
     <string name="titrePDV">Points de Vie</string>
+    <string name="titrePDV1">DV :</string>
+    <string name="titrePDV2">PV au niveau 1 :</string>
+    <string name="titrePDV3">PV aux niveaux suivants :</string>
     <string name="titreMaitrises">Maîtrises</string>
     <string name="titreEquipement">Équipement </string>
+    <string name="historique">Choisissez votre historique</string>
 
     <!-- Guerrier -->
     <string name="nomGuerrier">Guerrier</string>
@@ -54,9 +58,6 @@
     <string name="equipementGuerrier3">(a) une arbalète légère et 20 carreaux ou (b) deux hachettes</string>
     <string name="equipementGuerrier4">(a) un sac d\'exploration souterraine ou (b) un sac d\'explorateur</string>
     <string name="equipementGuerrier5"></string>
-    <string name="titrePDV1"><b>DV :</b></string>
-    <string name="titrePDV2">PV au niveau 1 :</string>
-    <string name="titrePDV3">PV aux niveaux suivants :</string>
     <string name="armureGuerrier"> toutes les armures, boucliers</string>
     <string name="armeGuerrier"> armes courantes, armes de guerre</string>
     <string name="outilsGuerrier">Aucun</string>
@@ -65,14 +66,40 @@
         où avez-vous obtenu votre formation de combat, et qu\’est-ce qui vous démarque des combattants lambda autour de vous ?
         Êtes-vous particulièrement impitoyable ? Avez-vous obtenu une aide spéciale d\’un mentor, peut-être en raison de votre dévouement exceptionnel ?
         Qu\'est-ce qui vous a poussé vers cette formation en premier lieu ?
-        Une menace pour votre patrie, une soif de vengeance ou la nécessité de faire vos preuves sont autant de facteurs de vocation.
+        \n Une menace pour votre patrie, une soif de vengeance ou la nécessité de faire vos preuves sont autant de facteurs de vocation.
         Vous avez peut-être bénéficié d’une formation dans l\'armée d\'un noble ou dans une milice locale.
         Peut-être avez-vous été formé dans une école militaire où l\’on vous a enseigné la stratégie, la tactique et l\'histoire militaire.
         Êtes-vous autodidacte ? Avez-vous pris l\'épée pour échapper à la vie de la ferme, ou suivez-vous une tradition familiale ?
-        Où avez-vous obtenu vos armes et votre armure ? D\’un fait d\’armes ou s\’agit-il d\’objets de famille ?
+        \n Où avez-vous obtenu vos armes et votre armure ? D\’un fait d\’armes ou s\’agit-il d\’objets de famille ?
         Ou peut-être avez-vous économisé pendant des années pour vous les acheter ?
         Votre armement est maintenant l\'une de vos possessions les plus importantes, les seules choses qui vous séparent de l\'étreinte de la mort.</string>
-    <string name="historique">Choisissez votre historique</string>
+
+
+    <!-- Barbare-->
+    <string name="nomBarbare">Barbare</string>
+    <string name="DVBarbare">12</string>
+    <string name="DVMoyBarbare">7</string>
+    <string name="maitriseBarbare">Force, Constitution</string>
+    <string name="competenceBarbare"> choisissez deux compétences parmi Athlétisme, Dressage, Intimidation, Nature, Perception et Survie</string>
+    <string name="equipementBarbare1">(a) une hache à deux mains ou (b) n\'importe quelle arme de guerre de corps à corps</string>
+    <string name="equipementBarbare2">(a) deux hachettes ou (b) n\'importe quelle arme courante</string>
+    <string name="equipementBarbare3">un sac d\'explorateur et quatre javelines</string>
+    <string name="equipementBarbare4"></string>
+    <string name="equipementBarbare5"></string>
+    <string name="armureBarbare">  armures légères, armures intermédiaires, boucliers</string>
+    <string name="armeBarbare"> armes courantes, armes de guerre</string>
+    <string name="outilsBarbare">Aucun</string>
+    <string name="nbCompetenceBarbare">deux</string>
+    <string name="descriptionBarbare">Lorsque vous créez un barbare, réfléchissez d\'où il vient et quelle est sa place dans le monde.
+        Discutez avec votre MD afin de lui trouver une origine appropriée.
+        Venez-vous d\'une contrée éloignée faisant de vous un étranger dans la campagne ?
+        Ou bien cette même campagne se déroule t-elle dans une rude région frontalière où les barbares sont communs ?
+        \n Qu\'est-ce qui vous a poussé à devenir aventurier ? Avez vous été séduit par la certitude de devenir riche dans les pays régis par les lois ?
+        Avez-vous joint vos forces avec les soldats de ces mêmes pays afin de repousser une menace commune ?
+        Est-ce que des monstres ou une horde étrangère vous ont contraint à l\'exil ?
+        \n Vous étiez peut-être un prisonnier de guerre, conduit enchaîné dans les pays « civilisés » et qui tente de regagner sa liberté à tout prix.
+        Ou peut-être avez vous été banni de votre peuple suite à un crime que vous avez commis,
+        un tabou que vous avez brisé ou une révolte qui vous a déchu de votre autorité.</string>
 
     <!-- Soldat -->
     <string name="nomHistoriqueSoldat">Soldat</string>

@@ -40,6 +40,12 @@ public class ClasseManager {
                         R.string.equipementGuerrier3, R.string.equipementGuerrier4, R.string.equipementGuerrier5);
                 break;
             case "Barbare":
+                classeJoueur = new Classe();
+                classeJoueur.setClasse(context, R.string.nomBarbare, R.string.descriptionBarbare, R.string.DVBarbare,
+                        R.string.DVMoyBarbare, R.string.maitriseBarbare, R.string.armureBarbare,
+                        R.string.armeBarbare, R.string.outilsBarbare, R.string.nbCompetenceBarbare,
+                        R.string.competenceBarbare, R.string.equipementBarbare1, R.string.equipementBarbare2,
+                        R.string.equipementBarbare3, R.string.equipementBarbare4, R.string.equipementBarbare5);
                 break;
             case "Barde":
                 break;
