@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vinciguerra.dd.R;
+import com.vinciguerra.dd.races.DemiElfe;
 import com.vinciguerra.dd.races.Drakeide;
 import com.vinciguerra.dd.races.Race;
 
@@ -52,6 +53,11 @@ public class RaceManager {
                         R.string.drkTitreTrait4);
                 break;
             case "Demi-elfe":
+                joueur = new DemiElfe();
+                joueur.setInfo(context, race, R.string.demiElfeCarac, R.string.demiElfeAge, R.string.drkTaille,
+                        R.string.vitesse, R.string.demiElfeTrait1, R.string.demiElfeTrait2, R.string.demiElfeTrait3, R.string.demiElfeTrait4,
+                        R.string.demiElfeLangue, R.string.demiElfeTitreTrait1, R.string.demiElfetitreTrait2,
+                        R.string.demiElfeTitreTrait3, R.string.demiELfeTitreTrait4);
                 break;
             case "Demi-orc":
                 break;

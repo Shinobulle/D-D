@@ -21,6 +21,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.vinciguerra.dd.modele.ClasseManager;
+import com.vinciguerra.dd.modele.HistoriqueManager;
 import com.vinciguerra.dd.modele.RaceManager;
 import com.vinciguerra.dd.races.Race;
 
@@ -35,7 +36,9 @@ public class CreationGuidee extends AppCompatActivity {
     public String personnage;
     public String nomPersonnage;
     public String racePersonnage = "";
-    public String sousEspecePersonnage ="";
+    public String sousEspecePersonnage = "";
+    public String classePersonnage = "";
+    public String historiquePersonnage = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,16 +116,46 @@ public class CreationGuidee extends AppCompatActivity {
                     case 3 :
                         String classe = parentView.getItemAtPosition(position).toString();
                         if (!classe.equals("")){
-                            Log.d("Dragon", "classe choisis : " + classe);
                             ClasseManager.getClasse(getBaseContext(), classe);
-                            titreCarac.setText(R.string.titrePDV);
-                            carac.setText(ClasseManager.classeJoueur.getPDV());
-                            titreAge.setText(R.string.titreMaitrises);
-                            age.setText(ClasseManager.classeJoueur.getMaitrise());
-                            titreTaille.setText(R.string.titreEquipement);
-                            taille.setText(ClasseManager.classeJoueur.getEquipement());
+                            titreCarac.setText(ClasseManager.classeJoueur.getNomClasse());
+                            carac.setText(ClasseManager.classeJoueur.getDescriptionClasse());
+                            titreAge.setText(R.string.titrePDV);
+                            age.setText(ClasseManager.classeJoueur.getPDV());
+                            titreTaille.setText(R.string.titreMaitrises);
+                            taille.setText(ClasseManager.classeJoueur.getMaitrise());
+                            titreVitesse.setText(R.string.titreEquipement);
+                            vitesse.setText(ClasseManager.classeJoueur.getEquipement());
                         }
                         break;
+                    case 4 :
+                        String historique = parentView.getItemAtPosition(position).toString();
+                        if (!historique.equals("")){
+                            HistoriqueManager.getHistorique(getBaseContext(), historique);
+                            if (historique.equals("Soldat")){
+                                titreCarac.setText(HistoriqueManager.historiqueJoueur.getNomHistorique());
+                                carac.setText(HistoriqueManager.historiqueJoueur.getDescriptionHistorique());
+                                titreAge.setText(R.string.titreCompetenceHistorique);
+                                age.setText(HistoriqueManager.historiqueJoueur.getCompetenceHistorique());
+                                titreTaille.setText(R.string.titreOutilHistorique);
+                                taille.setText(HistoriqueManager.historiqueJoueur.getOutilHistorique());
+                                titreVitesse.setText(R.string.titreEquipement);
+                                vitesse.setText(HistoriqueManager.historiqueJoueur.getEquipementHistorique());
+                                titreTrait1.setText(HistoriqueManager.historiqueJoueur.getNomCapaciteHistorique());
+                                trait1.setText(HistoriqueManager.historiqueJoueur.getCapaciteHistorique());
+                            }else if(historique.equals("Acolyte")){
+                                titreCarac.setText(HistoriqueManager.historiqueJoueur.getNomHistorique());
+                                carac.setText(HistoriqueManager.historiqueJoueur.getDescriptionHistorique());
+                                titreAge.setText(R.string.titreCompetenceHistorique);
+                                age.setText(HistoriqueManager.historiqueJoueur.getCompetenceHistorique());
+                                titreTaille.setText(R.string.titrelangue);
+                                taille.setText(HistoriqueManager.historiqueJoueur.getLangueHistorique());
+                                titreVitesse.setText(R.string.titreEquipement);
+                                vitesse.setText(HistoriqueManager.historiqueJoueur.getEquipementHistorique());
+                                titreTrait1.setText(HistoriqueManager.historiqueJoueur.getNomCapaciteHistorique());
+                                trait1.setText(HistoriqueManager.historiqueJoueur.getCapaciteHistorique());
+                            }
+
+                        }
                 }
             }
 
@@ -168,12 +201,14 @@ public class CreationGuidee extends AppCompatActivity {
                 }
                 break;
             case 1:
+                //On passe de la race à la sous-espèce ou la classe
                 if (!racePersonnage.equals("")) {
                     Log.d(dragon, "etapeSuivanteCase 1: " + etape);
                     personnage = (textpres.getText().toString()) + "La race : " + raceChoisi + "\n";
                     textpres.setText(personnage);
                     clearscroll(v);
-                    if (raceChoisi.equals("Elfe")||raceChoisi.equals("Halfelin")||raceChoisi.equals("Nain")||raceChoisi.equals("Gnome")||raceChoisi.equals("Drakéide")){
+                    if (raceChoisi.equals("Elfe")||raceChoisi.equals("Halfelin")||raceChoisi.equals("Nain")||
+                            raceChoisi.equals("Gnome")||raceChoisi.equals("Drakéide")){
                         etape = 2;
                         afficherSousEspece(v, raceChoisi);
                         if (raceChoisi.equals("Drakéide")){
@@ -183,6 +218,8 @@ public class CreationGuidee extends AppCompatActivity {
                         }
                     }
                     else{
+                        chargerSpinner(R.id.spinnerRace, ClasseManager.getListClasse());
+                        text.setText(getText(R.string.classe));
                         etape = 3;
                     }
                 } else {
@@ -191,13 +228,14 @@ public class CreationGuidee extends AppCompatActivity {
                 Log.d(dragon, "etapeSuivanteCase : " + etape +" fini");
                 break;
             case 2:
+                // On passe de la sous-espèce à la classe
                 if (!raceChoisi.equals("")){
                     clearscroll(v);
                     if (raceChoisi.equals("Drakéide")){
                         personnage = (textpres.getText().toString()) + "La couleur : " + raceChoisi+ "\n";
 
                     }else{
-                        personnage = (textpres.getText().toString()) + "La couleur : " + raceChoisi + "\n";
+                        personnage = (textpres.getText().toString()) + "La sous-espèce : " + raceChoisi + "\n";
                     }
                     sousEspecePersonnage = raceChoisi;
                     textpres.setText(personnage);
@@ -206,6 +244,18 @@ public class CreationGuidee extends AppCompatActivity {
                     etape = 3;
                 }else{
                     Toast.makeText(getBaseContext(), "Erreur, selectionnez votre sous-espèce ou votre couleur de dragon !", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case 3 :
+                //on passe de la classe à l'historique
+                if (!raceChoisi.equals("")){
+                    clearscroll(v);
+                    classePersonnage = raceChoisi;
+                    personnage = (textpres.getText().toString()) + "La classe : " + raceChoisi+ "\n";
+                    textpres.setText(personnage);
+                    chargerSpinner(R.id.spinnerRace, HistoriqueManager.getListHistorique());
+                    text.setText(getText(R.string.historique));
+                    etape = 4;
                 }
                 break;
         }
@@ -224,7 +274,7 @@ public class CreationGuidee extends AppCompatActivity {
         TextView textpres = (TextView) findViewById(R.id.textViewPresentation);
         EditText name = (EditText) findViewById(R.id.editTextPersonName);
         Spinner spinnerRace = (Spinner) findViewById(R.id.spinnerRace);
-
+        clearscroll(v);
         switch (etape) {
             case 0:
                 // retour à l'accueil
@@ -237,11 +287,11 @@ public class CreationGuidee extends AppCompatActivity {
                 spinnerRace.setVisibility(View.GONE);
                 annuler.setText(getText(R.string.accueil));
                 textpres.setText(getText(R.string.pres));
-                clearscroll(v);
                 etape = 0;
                 Log.d(dragon, "etapePrecedentCase : " + etape);
                 break;
             case 2:
+                //Retour sur la race
                 personnage = "Nom du personnage : " + nomPersonnage + "\n";
                 textpres.setText(personnage);
                 text.setText(getText(R.string.choixRace));
@@ -251,12 +301,45 @@ public class CreationGuidee extends AppCompatActivity {
                 Log.d(dragon, "etapePrecedentCase : " + etape);
                 break;
             case 3 :
-                personnage = "Nom du personnage : " + nomPersonnage + "\n"
-                        + "la race : "+ racePersonnage;
+                //retour sur la sous-espèce
+                sousEspecePersonnage = "";
+                Log.d(dragon, "etapePrecedente sous-espèce: " + sousEspecePersonnage);
+                if (!sousEspecePersonnage.equals("")){
+                    personnage = "Nom du personnage : " + nomPersonnage + "\n"
+                            + "la race : "+ racePersonnage + "\n";
+                    afficherSousEspece(v, racePersonnage);
+                    text.setText(getText(R.string.sousEspece));
+                    etape=2;
+                }else {
+                    personnage = "Nom du personnage : " + nomPersonnage + "\n";
+                    textpres.setText(personnage);
+                    text.setText(getText(R.string.choixRace));
+                    etape = 1;
+                    chargerSpinner(R.id.spinnerRace, RaceManager.getListRace(getBaseContext()));
+                    racePersonnage = "";
+                }
                 textpres.setText(personnage);
-                afficherSousEspece(v, racePersonnage);
-                text.setText(getText(R.string.sousEspece));
-                etape=2;
+                break;
+            case 4:
+                //retour sur la classe
+                if (!sousEspecePersonnage.equals("")){
+                    if (racePersonnage.equals("Drakéide")){
+                        personnage = "Nom du personnage : " + nomPersonnage + "\n"
+                                + "la race : "+ racePersonnage + "\n" +
+                                "La couleur : " + sousEspecePersonnage+ "\n";
+                    }else{
+                        personnage = "Nom du personnage : " + nomPersonnage + "\n"
+                                + "la race : "+ racePersonnage + "\n" +
+                                "La sous-espèce : " + sousEspecePersonnage + "\n";
+                    }
+                }else {
+                    personnage = "Nom du personnage : " + nomPersonnage + "\n"
+                            + "la race : "+ racePersonnage + "\n" ;
+                }
+                textpres.setText(personnage);
+                chargerSpinner(R.id.spinnerRace, ClasseManager.getListClasse());
+                text.setText(getText(R.string.classe));
+                etape = 3;
                 break;
         }
     }

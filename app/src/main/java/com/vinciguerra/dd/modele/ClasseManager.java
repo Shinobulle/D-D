@@ -14,28 +14,30 @@ public class ClasseManager {
     public static Classe classeJoueur;
 
     public static Map<String, String> getListClasse(){
-        Map<String, String> couleur = new TreeMap<>();
-        couleur.put("Guerrier", "10");
-        couleur.put("Barbare", "12");
-        couleur.put("Barde", "8");
-        couleur.put("Clerc", "8");
-        couleur.put("Druide", "8");
-        couleur.put("Ensorceleur", "8");
-        couleur.put("Magicien", "6");
-        couleur.put("Moine", "8");
-        couleur.put("Occultiste", "8");
-        couleur.put("Paladin", "10");
-        couleur.put("Rôdeur", "10");
-        couleur.put("Roublard", "8");
-        return couleur;
+        Map<String, String> listClasse = new TreeMap<>();
+        listClasse.put("Guerrier", "10");
+        listClasse.put("Barbare", "12");
+        listClasse.put("Barde", "8");
+        listClasse.put("Clerc", "8");
+        listClasse.put("Druide", "8");
+        listClasse.put("Ensorceleur", "8");
+        listClasse.put("Magicien", "6");
+        listClasse.put("Moine", "8");
+        listClasse.put("Occultiste", "8");
+        listClasse.put("Paladin", "10");
+        listClasse.put("Rôdeur", "10");
+        listClasse.put("Roublard", "8");
+        return listClasse;
     }
 
     public static void getClasse (Context context, String classe){
         switch(classe){
             case "Guerrier":
                 classeJoueur = new Classe();
-                classeJoueur.setClasse(context, R.string.nomGuerrier, R.string.DVguerrier, R.string.DVMoyGuerrier, R.string.maitriseGuerrier, R.string.competenceGuerrier, R.string.equipementGuerrier);
-                Log.d("DRAGON", "classe PDV :" + classeJoueur.getPDV() );
+                classeJoueur.setClasse(context, R.string.nomGuerrier, R.string.descriptionGuerrier,R.string.DVguerrier, R.string.DVMoyGuerrier,R.string.maitriseGuerrier, R.string.armureGuerrier,
+                        R.string.armeGuerrier, R.string.outilsGuerrier, R.string.nbCompetenceGuerrier,
+                        R.string.competenceGuerrier, R.string.equipementGuerrier1, R.string.equipementGuerrier2,
+                        R.string.equipementGuerrier3, R.string.equipementGuerrier4, R.string.equipementGuerrier5);
                 break;
             case "Barbare":
                 break;

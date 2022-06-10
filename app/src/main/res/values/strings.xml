@@ -41,14 +41,113 @@
     <string name="drkLangue">Vous pouvez parler, lire et écrire le commun et le draconique. Le draconique passe pour être l\'une des plus anciennes langues et est souvent utilisé dans l\'étude de la magie. La langue semble cassante pour la plupart des autres créatures, et comprend de nombreuses consonnes dures et sifflantes.</string>
     <string name="titrePDV">Points de Vie</string>
     <string name="titreMaitrises">Maîtrises</string>
-    <string name="titreEquipement">Equipement</string>
+    <string name="titreEquipement">Équipement </string>
+
+    <!-- Guerrier -->
     <string name="nomGuerrier">Guerrier</string>
     <string name="DVguerrier">10</string>
     <string name="DVMoyGuerrier">6</string>
     <string name="maitriseGuerrier">Force, Constitution</string>
     <string name="competenceGuerrier">Acrobaties, Athlétisme, Dressage, Histoire, Intimidation, Intuition, Perception et Survie</string>
-    <string name="equipementGuerrier">En cours</string>
+    <string name="equipementGuerrier1">(a) une cotte de mailles ou (b) une armure de cuir, un arc long et 20 flèches</string>
+    <string name="equipementGuerrier2">(a) une arme de guerre et un bouclier ou (b) deux armes de guerre</string>
+    <string name="equipementGuerrier3">(a) une arbalète légère et 20 carreaux ou (b) deux hachettes</string>
+    <string name="equipementGuerrier4">(a) un sac d\'exploration souterraine ou (b) un sac d\'explorateur</string>
+    <string name="equipementGuerrier5"></string>
     <string name="titrePDV1"><b>DV :</b></string>
     <string name="titrePDV2">PV au niveau 1 :</string>
     <string name="titrePDV3">PV aux niveaux suivants :</string>
+    <string name="armureGuerrier"> toutes les armures, boucliers</string>
+    <string name="armeGuerrier"> armes courantes, armes de guerre</string>
+    <string name="outilsGuerrier">Aucun</string>
+    <string name="nbCompetenceGuerrier">deux</string>
+    <string name="descriptionGuerrier">Lorsque vous créez un guerrier, pensez aux éléments de l\'historique de votre personnage :
+        où avez-vous obtenu votre formation de combat, et qu\’est-ce qui vous démarque des combattants lambda autour de vous ?
+        Êtes-vous particulièrement impitoyable ? Avez-vous obtenu une aide spéciale d\’un mentor, peut-être en raison de votre dévouement exceptionnel ?
+        Qu\'est-ce qui vous a poussé vers cette formation en premier lieu ?
+        Une menace pour votre patrie, une soif de vengeance ou la nécessité de faire vos preuves sont autant de facteurs de vocation.
+        Vous avez peut-être bénéficié d’une formation dans l\'armée d\'un noble ou dans une milice locale.
+        Peut-être avez-vous été formé dans une école militaire où l\’on vous a enseigné la stratégie, la tactique et l\'histoire militaire.
+        Êtes-vous autodidacte ? Avez-vous pris l\'épée pour échapper à la vie de la ferme, ou suivez-vous une tradition familiale ?
+        Où avez-vous obtenu vos armes et votre armure ? D\’un fait d\’armes ou s\’agit-il d\’objets de famille ?
+        Ou peut-être avez-vous économisé pendant des années pour vous les acheter ?
+        Votre armement est maintenant l\'une de vos possessions les plus importantes, les seules choses qui vous séparent de l\'étreinte de la mort.</string>
+    <string name="historique">Choisissez votre historique</string>
+
+    <!-- Soldat -->
+    <string name="nomHistoriqueSoldat">Soldat</string>
+    <string name="descriptionSoldat">La guerre a été votre vie aussi loin que remontent vos souvenirs.
+        Vous avez été formé dès votre jeunesse, avez étudié l\'utilisation des armes et des armures, appris des techniques de base de survie,
+        y compris la façon de rester en vie sur un champ de bataille.
+        Vous pourriez avoir fait partie de l\'armée d\'un royaume ou d\'une compagnie de mercenaires,
+        ou peut-être avoir été membre d\'une milice locale qui s\'est fait connaître au cours d\'une guerre récente.
+        \n \n Lorsque vous choisissez cet historique, travaillez avec votre MD pour déterminer de quelle organisation militaire vous faisiez partie,
+        jusqu\'où avez-vous progressé dans ses grades, et quelles expériences avez-vous vécues au cours de votre carrière militaire.
+        Était-ce une armée régulière, la garde d\'une ville ou une milice de village ?
+        Ou était-ce l\'armée privée d\'un noble ou d\'un marchand, ou bien une compagnie de mercenaires ?</string>
+    <string name="competenceSoldat">Athétisme, Intimidation</string>
+    <string name="outilSoldat">un type de jeu, véhicules (terrestre)</string>
+    <string name="langueSoldat"></string>
+    <string name="equipementSoldat">un insigne de grade, un trophée pris sur un ennemi mort (une dague,
+        une lame brisée, un morceau de bannière), un jeu de dés en os ou un jeu de cartes,
+        des vêtements communs et une bourse contenant 10 po.</string>
+    <string name="nomCapaciteSoldat">Grade militaire</string>
+    <string name="capaciteSoldat">Vous avez obtenu un grade durant votre carrière en tant que soldat.
+        Les soldats fidèles à votre ancienne organisation militaire reconnaissent encore votre autorité et votre influence,
+        et ils s\'en remettent à vous s\'ils sont d\'un grade inférieur.
+        Vous pouvez invoquer votre grade pour influencer d\'autres soldats et réquisitionner des équipements simples
+        ou des chevaux pour une utilisation temporaire.
+        Vous pouvez aussi généralement avoir accès à des campements militaires et des forteresses amis là où votre grade est reconnu.</string>
+
+    <!-- Acolyte-->
+    <string name="nomHistoriqueAcolyte">Acolyte</string>
+    <string name="descriptionAcolyte">Vous avez passé votre vie au service du temple d\'un dieu spécifique ou d\'un panthéon de dieux.
+        Vous agissez comme intermédiaire entre les royaumes des cieux et le monde des mortels,
+        exécutant des rites sacrés et offrant des sacrifices pour conduire les fidèles face aux divins.
+        Vous n\'êtes pas nécessairement un clerc, car exécuter des rites sacrés religieux n\'est pas la même chose que de canaliser la puissance divine
+        \n \n Choisissez un dieu, un panthéon de dieux ou un être quasi-divin, et travaillez avec votre MD pour préciser la nature de votre labeur religieux.
+        Étiez-vous un fonctionnaire de bas rang dans un temple, élevé dès l\'enfance pour aider les clercs à réaliser leurs rites sacrés ?
+        Ou étiez-vous un religieux qui a soudainement reçu un appel pour servir son dieu d\'une manière différente ?
+        Peut-être êtes-vous le chef d\'un petit culte en dehors de la structure établie d\'un temple,
+        ou membre d\'un groupe occulte qui a servi un maître diabolique que vous reniez à présent.</string>
+    <string name="competenceAcolyte"> Intuition, Religion</string>
+    <string name="outilAcolyte"></string>
+    <string name="langueAcolyte">deux de votre choix</string>
+    <string name="equipementAcolyte">un symbole sacré (cadeau reçu lorsque vous êtes entré en sacerdoce),
+        un livre de prières, 5 bâtons d\'encens, des habits de cérémonie,
+        des vêtements communs et une bourse contenant 15 po.</string>
+    <string name="nomCapaciteAcolyte">Abri du fidèle</string>
+    <string name="capaciteAcolyte">En tant qu\'acolyte, vous imposez le respect à ceux qui partagent votre foi,
+        et pouvez mener les cérémonies religieuses de votre divinité.
+        Vous et vos compagnons aventuriers pouvez vous attendre à recevoir des soins gratuits dans un temple,
+        un sanctuaire ou toute autre présence établie de votre foi,
+        bien que vous soyez responsable de fournir toutes les composantes matérielles nécessaires aux sorts.
+        Ceux qui partagent votre religion vous aideront (mais seulement vous) et vous offriront un mode de vie modeste.
+        \n \n Vous pouvez également avoir des liens avec un temple spécifique dédié à votre divinité ou votre panthéon, et vous y avez une résidence.
+        Cela pourrait être le temple où vous avez servi, si vous êtes resté en bons termes avec lui,
+        ou un temple dans lequel vous avez trouvé une nouvelle maison.
+        Lorsque vous êtes proche de votre temple, vous pouvez faire appel à des religieux pour vous aider,
+        à condition que l\'aide que vous demandiez ne soit pas dangereuse et que vous restiez en règle avec votre temple.</string>
+
+    <!-- Elfe -->
+    <string name="demiElfeCarac">Votre Charisme augmente de 2 et deux autres caractéristiques de votre choix augmentent de 1.</string>
+    <string name="demiElfeAge">Les demi-elfes vieillissent au même rythme que les humains, et atteignent l\'âge adulte vers leurs 20 ans.
+        Ils vivent cependant beaucoup plus longtemps que les humains, dépassant souvent les 180 ans.</string>
+    <string name="demiElfeTaille">Les demi-elfes ont plus ou moins la même taille que les humains, de 1,50 à 1,85 m. Votre taille est Moyenne (M).</string>
+    <string name="demiElfeTitreTrait1">Vision dans le noir.</string>
+    <string name="demiElfeTrait1">Grâce à votre sang elfe, vous avez une vision supérieure dans le noir et les conditions de faible éclairage.
+        Vous pouvez voir à 18 mètres dans une lumière faible comme vous verriez avec une lumière vive,
+        et dans le noir comme vous verriez avec une lumière faible.
+        Dans le noir, vous ne discernez pas les couleurs, uniquement des nuances de gris.</string>
+    <string name="demiElfetitreTrait2">Ascendance féerique.</string>
+    <string name="demiElfeTrait2">Vous avez un avantage aux jets de sauvegarde contre les effets de charme et la magie ne peut pas vous endormir.</string>
+    <string name="demiElfeTitreTrait3">Polyvalence.</string>
+    <string name="demiElfeTrait3">Vous gagnez la maîtrise de deux compétences de votre choix.</string>
+    <string name="demiELfeTitreTrait4"></string>
+    <string name="demiElfeTrait4"> </string>
+    <string name="demiElfeLangue">Vous pouvez parler, lire et écrire le commun, l\'elfique, et une langue supplémentaire de votre choix.</string>
+
+    <!-- Titre historique -->
+    <string name="titreCompetenceHistorique">Compétences maîtrisées : </string>
+    <string name="titreOutilHistorique">Outils maîtrisés : </string>
 </resources>
