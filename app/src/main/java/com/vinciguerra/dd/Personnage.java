@@ -36,7 +36,6 @@ public class Personnage extends AppCompatActivity {
         setContentView(R.layout.personnage);
         chargerSpinner(R.id.spinnerPseudo, PersonnageManager.getListPseudo(getBaseContext()));
         Spinner spinnerPseudo = (Spinner) findViewById(R.id.spinnerPseudo);
-        Log.d("Dragon", "onCreate: test 1");
         Spinner spinnerPersonnage = (Spinner) findViewById(R.id.spinnerPersonnage);
         spinnerPseudo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -45,6 +44,9 @@ public class Personnage extends AppCompatActivity {
                 if (!pseudo.equals("")){
                     spinnerPersonnage.setVisibility(View.VISIBLE);
                     chargerSpinner(R.id.spinnerPersonnage, PersonnageManager.getListPersonnage(getBaseContext(), pseudo));
+                }else {
+                    clearscroll(selectedItemView);
+                    spinnerPersonnage.setVisibility(View.INVISIBLE);
                 }
             }
 
@@ -55,11 +57,10 @@ public class Personnage extends AppCompatActivity {
             }
         });
 
-        Log.d("Dragon", "onCreate: test 2");
+
         spinnerPersonnage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                Log.d("Dragon", "onCreate: test 3");
                 TextView titreNom = (TextView) findViewById(R.id.textViewTitreNom);
                 TextView nom = (TextView) findViewById(R.id.textViewNom);
                 TextView titreRace = (TextView) findViewById(R.id.textViewTitreRace);

@@ -24,18 +24,25 @@
     <string name="validationCouleur">Votre couleur :</string>
     <string name="validationClasse">Votre classe :</string>
     <string name="validationHistorique">Votre historique :</string>
+    <string name="pseudo">Choisissez votre pseudo</string>
+    <string name="validationPersonnage">Valider Personnage</string>
 
 
     <!-- Sélection dans la fiche -->
     <string name="carac">Amélioration de caractéristique.</string>
-    <string name="drkCarac">Votre Force augmente de 2 et votre Charisme de 1.</string>
     <string name="titreVitesse">Vitesse.</string>
     <string name="vitesse">Votre vitesse de base est de 9 mètres.</string>
     <string name="titreAge">Âge.</string>
+    <string name="titreTaille">Taille.</string>
+    <string name="titrelangue">Langues.</string>
+
+    <!-- Titre historique -->
+    <string name="titreCompetenceHistorique">Compétences maîtrisées : </string>
+    <string name="titreOutilHistorique">Outils maîtrisés : </string>
 
     <!-- Drakéide -->
     <string name="drkAge">Les jeunes drakéides grandissent rapidement. Ils marchent juste quelques heures après l\'éclosion, atteignent la taille et le développement d\'un enfant humain de dix ans à l\'âge de 3 ans, et sont adultes à 15 ans. Ils vivent environ 80 ans.</string>
-    <string name="titreTaille">Taille.</string>
+    <string name="drkCarac">Votre Force augmente de 2 et votre Charisme de 1.</string>
     <string name="drkTaille">Les drakéides sont plus grands et plus lourds que les humains, mesurant plus de 1,80 mètre pour un poids moyen de près de 125 kg. Votre taille est Moyenne (M).</string>
     <string name="drkTitreTrait1">Ascendance draconique.</string>
     <string name="drkTrait1">Vous avez une ascendance draconique. Choisissez un type de dragon dans la table ci-dessous. Votre souffle et votre résistance aux dégâts sont déterminés par le type de dragon, comme indiqué dans la table.</string>
@@ -48,7 +55,6 @@
     <string name="drkTrait3">Vous obtenez la résistance au type de dégâts associé à votre ascendance draconique.</string>
     <string name="drkTitreTrait4"></string>
     <string name="drkTrait4"> </string>
-    <string name="titrelangue">Langues.</string>
     <string name="drkLangue">Vous pouvez parler, lire et écrire le commun et le draconique. Le draconique passe pour être l\'une des plus anciennes langues et est souvent utilisé dans l\'étude de la magie. La langue semble cassante pour la plupart des autres créatures, et comprend de nombreuses consonnes dures et sifflantes.</string>
     <string name="titrePDV">Points de Vie</string>
     <string name="titrePDV1">DV :</string>
@@ -57,6 +63,76 @@
     <string name="titreMaitrises">Maîtrises</string>
     <string name="titreEquipement">Équipement </string>
     <string name="historique">Choisissez votre historique</string>
+
+    <!-- Demi-Elfe -->
+    <string name="demiElfeCarac">Votre Charisme augmente de 2 et deux autres caractéristiques de votre choix augmentent de 1.</string>
+    <string name="demiElfeAge">Les demi-elfes vieillissent au même rythme que les humains, et atteignent l\'âge adulte vers leurs 20 ans.
+        Ils vivent cependant beaucoup plus longtemps que les humains, dépassant souvent les 180 ans.</string>
+    <string name="demiElfeTaille">Les demi-elfes ont plus ou moins la même taille que les humains, de 1,50 à 1,85 m. Votre taille est Moyenne (M).</string>
+    <string name="demiElfeTitreTrait1">Vision dans le noir.</string>
+    <string name="demiElfeTrait1">Grâce à votre sang elfe, vous avez une vision supérieure dans le noir et les conditions de faible éclairage.
+        Vous pouvez voir à 18 mètres dans une lumière faible comme vous verriez avec une lumière vive,
+        et dans le noir comme vous verriez avec une lumière faible.
+        Dans le noir, vous ne discernez pas les couleurs, uniquement des nuances de gris.</string>
+    <string name="demiElfetitreTrait2">Ascendance féerique.</string>
+    <string name="demiElfeTrait2">Vous avez un avantage aux jets de sauvegarde contre les effets de charme et la magie ne peut pas vous endormir.</string>
+    <string name="demiElfeTitreTrait3">Polyvalence.</string>
+    <string name="demiElfeTrait3">Vous gagnez la maîtrise de deux compétences de votre choix.</string>
+    <string name="demiELfeTitreTrait4"></string>
+    <string name="demiElfeTrait4"> </string>
+    <string name="demiElfeLangue">Vous pouvez parler, lire et écrire le commun, l\'elfique, et une langue supplémentaire de votre choix.</string>
+
+    <!-- Barbare-->
+    <string name="nomBarbare">Barbare</string>
+    <string name="DVBarbare">12</string>
+    <string name="DVMoyBarbare">7</string>
+    <string name="maitriseBarbare">Force, Constitution</string>
+    <string name="competenceBarbare"> choisissez deux compétences parmi Athlétisme, Dressage, Intimidation, Nature, Perception et Survie</string>
+    <string name="equipementBarbare1">(a) une hache à deux mains ou (b) n\'importe quelle arme de guerre de corps à corps</string>
+    <string name="equipementBarbare2">(a) deux hachettes ou (b) n\'importe quelle arme courante</string>
+    <string name="equipementBarbare3">un sac d\'explorateur et quatre javelines</string>
+    <string name="equipementBarbare4"></string>
+    <string name="equipementBarbare5"></string>
+    <string name="armureBarbare">  armures légères, armures intermédiaires, boucliers</string>
+    <string name="armeBarbare"> armes courantes, armes de guerre</string>
+    <string name="outilsBarbare">Aucun</string>
+    <string name="nbCompetenceBarbare">deux</string>
+    <string name="descriptionBarbare">Lorsque vous créez un barbare, réfléchissez d\'où il vient et quelle est sa place dans le monde.
+        Discutez avec votre MD afin de lui trouver une origine appropriée.
+        Venez-vous d\'une contrée éloignée faisant de vous un étranger dans la campagne ?
+        Ou bien cette même campagne se déroule t-elle dans une rude région frontalière où les barbares sont communs ?
+        \n Qu\'est-ce qui vous a poussé à devenir aventurier ? Avez vous été séduit par la certitude de devenir riche dans les pays régis par les lois ?
+        Avez-vous joint vos forces avec les soldats de ces mêmes pays afin de repousser une menace commune ?
+        Est-ce que des monstres ou une horde étrangère vous ont contraint à l\'exil ?
+        \n Vous étiez peut-être un prisonnier de guerre, conduit enchaîné dans les pays « civilisés » et qui tente de regagner sa liberté à tout prix.
+        Ou peut-être avez vous été banni de votre peuple suite à un crime que vous avez commis,
+        un tabou que vous avez brisé ou une révolte qui vous a déchu de votre autorité.</string>
+
+    <!-- Barde -->
+    <string name="nomBarde">Barde</string>
+    <string name="DVBarde">8</string>
+    <string name="DVMoyBarde">5</string>
+    <string name="maitriseBarde">Dextérité, Charisme</string>
+    <string name="competenceBarde">choisissez trois compétences de votre choix</string>
+    <string name="equipementBarde1">(a) une rapière, (b) une épée longue ou  n\'importe quelle arme courante</string>
+    <string name="equipementBarde2">(a) un sac de diplomate ou (b) un sac d\'artiste</string>
+    <string name="equipementBarde3">(a) un luth ou (b) n\'importe quel autre instrument de musique</string>
+    <string name="equipementBarde4">une armure de cuir et une dague</string>
+    <string name="equipementBarde5"></string>
+    <string name="armureBarde"> armures légères</string>
+    <string name="armeBarde"> armes courantes, arbalète de poing, épée longue, épée courte, rapière</string>
+    <string name="outilsBarde">trois instruments de musique de votre choix</string>
+    <string name="nbCompetenceBarde">trois</string>
+    <string name="descriptionBarde">Les bardes se nourrissent d\’histoires, qu\’elles soient véridiques ou pas.
+        Le background et les motivations de votre personnage ne sont pas aussi importants que les histoires qu\'il ou elle raconte à leurs propos.
+        Peut-être avez-vous eu une enfance sécuritaire et mondaine. Il n\'y a rien là pour composer une bonne histoire alors vous pourriez vous présenter
+        comme un orphelin élevé par une vieille femme dans un marais lugubre ou de telle façon que votre enfance mérite sa propre histoire.
+        Certains bardes acquièrent leur magie musicale par l\’intermédiaire de moyens extraordinaires, comme par l\’inspiration d\’une fée ou d\’une autre créature surnaturelle.
+        \n \n Étiez-vous l\’apprenti d’un maître, d\'un barde expérimenté que vous avez suivi jusqu\'à ce que vous tentiez seul votre chance ?
+        Avez-vous fréquenté un collège où vous avez étudié les connaissances bardiques et exercé votre magie musicale ?
+        Ou bien étiez-vous un jeune fugueur ou un orphelin qu\’un barde, devenu votre mentor, a pris sous son aile.
+        Ou vous pourriez être un enfant chéri de la noblesse qui a reçu une instruction prodigué par un tuteur.
+        Peut-être avez-vous été piégé par les griffes d\’une vieille sorcière avec qui vous avez pu négocier votre vie, votre liberté et un don musical, mais à quel prix ?</string>
 
     <!-- Guerrier -->
     <string name="nomGuerrier">Guerrier</string>
@@ -84,33 +160,6 @@
         \n Où avez-vous obtenu vos armes et votre armure ? D\’un fait d\’armes ou s\’agit-il d\’objets de famille ?
         Ou peut-être avez-vous économisé pendant des années pour vous les acheter ?
         Votre armement est maintenant l\'une de vos possessions les plus importantes, les seules choses qui vous séparent de l\'étreinte de la mort.</string>
-
-
-    <!-- Barbare-->
-    <string name="nomBarbare">Barbare</string>
-    <string name="DVBarbare">12</string>
-    <string name="DVMoyBarbare">7</string>
-    <string name="maitriseBarbare">Force, Constitution</string>
-    <string name="competenceBarbare"> choisissez deux compétences parmi Athlétisme, Dressage, Intimidation, Nature, Perception et Survie</string>
-    <string name="equipementBarbare1">(a) une hache à deux mains ou (b) n\'importe quelle arme de guerre de corps à corps</string>
-    <string name="equipementBarbare2">(a) deux hachettes ou (b) n\'importe quelle arme courante</string>
-    <string name="equipementBarbare3">un sac d\'explorateur et quatre javelines</string>
-    <string name="equipementBarbare4"></string>
-    <string name="equipementBarbare5"></string>
-    <string name="armureBarbare">  armures légères, armures intermédiaires, boucliers</string>
-    <string name="armeBarbare"> armes courantes, armes de guerre</string>
-    <string name="outilsBarbare">Aucun</string>
-    <string name="nbCompetenceBarbare">deux</string>
-    <string name="descriptionBarbare">Lorsque vous créez un barbare, réfléchissez d\'où il vient et quelle est sa place dans le monde.
-        Discutez avec votre MD afin de lui trouver une origine appropriée.
-        Venez-vous d\'une contrée éloignée faisant de vous un étranger dans la campagne ?
-        Ou bien cette même campagne se déroule t-elle dans une rude région frontalière où les barbares sont communs ?
-        \n Qu\'est-ce qui vous a poussé à devenir aventurier ? Avez vous été séduit par la certitude de devenir riche dans les pays régis par les lois ?
-        Avez-vous joint vos forces avec les soldats de ces mêmes pays afin de repousser une menace commune ?
-        Est-ce que des monstres ou une horde étrangère vous ont contraint à l\'exil ?
-        \n Vous étiez peut-être un prisonnier de guerre, conduit enchaîné dans les pays « civilisés » et qui tente de regagner sa liberté à tout prix.
-        Ou peut-être avez vous été banni de votre peuple suite à un crime que vous avez commis,
-        un tabou que vous avez brisé ou une révolte qui vous a déchu de votre autorité.</string>
 
     <!-- Soldat -->
     <string name="nomHistoriqueSoldat">Soldat</string>
@@ -167,25 +216,7 @@
         Lorsque vous êtes proche de votre temple, vous pouvez faire appel à des religieux pour vous aider,
         à condition que l\'aide que vous demandiez ne soit pas dangereuse et que vous restiez en règle avec votre temple.</string>
 
-    <!-- Elfe -->
-    <string name="demiElfeCarac">Votre Charisme augmente de 2 et deux autres caractéristiques de votre choix augmentent de 1.</string>
-    <string name="demiElfeAge">Les demi-elfes vieillissent au même rythme que les humains, et atteignent l\'âge adulte vers leurs 20 ans.
-        Ils vivent cependant beaucoup plus longtemps que les humains, dépassant souvent les 180 ans.</string>
-    <string name="demiElfeTaille">Les demi-elfes ont plus ou moins la même taille que les humains, de 1,50 à 1,85 m. Votre taille est Moyenne (M).</string>
-    <string name="demiElfeTitreTrait1">Vision dans le noir.</string>
-    <string name="demiElfeTrait1">Grâce à votre sang elfe, vous avez une vision supérieure dans le noir et les conditions de faible éclairage.
-        Vous pouvez voir à 18 mètres dans une lumière faible comme vous verriez avec une lumière vive,
-        et dans le noir comme vous verriez avec une lumière faible.
-        Dans le noir, vous ne discernez pas les couleurs, uniquement des nuances de gris.</string>
-    <string name="demiElfetitreTrait2">Ascendance féerique.</string>
-    <string name="demiElfeTrait2">Vous avez un avantage aux jets de sauvegarde contre les effets de charme et la magie ne peut pas vous endormir.</string>
-    <string name="demiElfeTitreTrait3">Polyvalence.</string>
-    <string name="demiElfeTrait3">Vous gagnez la maîtrise de deux compétences de votre choix.</string>
-    <string name="demiELfeTitreTrait4"></string>
-    <string name="demiElfeTrait4"> </string>
-    <string name="demiElfeLangue">Vous pouvez parler, lire et écrire le commun, l\'elfique, et une langue supplémentaire de votre choix.</string>
 
-    <!-- Titre historique -->
-    <string name="titreCompetenceHistorique">Compétences maîtrisées : </string>
-    <string name="titreOutilHistorique">Outils maîtrisés : </string>
+
+
 </resources>

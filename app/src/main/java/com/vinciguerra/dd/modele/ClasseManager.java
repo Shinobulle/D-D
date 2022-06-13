@@ -48,6 +48,11 @@ public class ClasseManager {
                         R.string.equipementBarbare3, R.string.equipementBarbare4, R.string.equipementBarbare5);
                 break;
             case "Barde":
+                classeJoueur.setClasse(context, R.string.nomBarde, R.string.descriptionBarde, R.string.DVBarde,
+                        R.string.DVMoyBarde, R.string.maitriseBarde, R.string.armureBarde,
+                        R.string.armeBarde, R.string.outilsBarde, R.string.nbCompetenceBarde,
+                        R.string.competenceBarde, R.string.equipementBarde1, R.string.equipementBarde2,
+                        R.string.equipementBarde3, R.string.equipementBarde4, R.string.equipementBarde5);
                 break;
             case "Clerc":
                 break;

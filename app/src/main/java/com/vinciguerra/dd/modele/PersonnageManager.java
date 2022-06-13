@@ -17,12 +17,10 @@ public class PersonnageManager {
         String sqlRequete = "SELECT pseudojoueur, nom FROM personnages";
         Map<String, String> tPersonnages = new HashMap<String, String>();
         Cursor c = bdd.rawQuery(sqlRequete,null);
-
+        c.moveToFirst();
         if(c.getCount() > 0){
             c.moveToFirst();
-            if (c.getCount() < 2){
-                tPersonnages.put(c.getString(0),c.getString(1));
-            }
+            tPersonnages.put(c.getString(0),c.getString(1));
             while(c.moveToNext()){
                 tPersonnages.put(c.getString(0),c.getString(1));
             }
@@ -40,9 +38,7 @@ public class PersonnageManager {
 
         if(c.getCount() > 0){
             c.moveToFirst();
-            if (c.getCount() < 2){
-                tPersonnages.put(c.getString(0),c.getString(1));
-            }
+            tPersonnages.put(c.getString(0),c.getString(1));
             while(c.moveToNext()){
                 tPersonnages.put(c.getString(0),c.getString(1));
             }

@@ -178,6 +178,7 @@ public class CreationGuidee extends AppCompatActivity {
         Spinner spinnerRace = (Spinner) findViewById(R.id.spinnerRace);
         String raceChoisi = (spinnerRace).getSelectedItem().toString();
         EditText name = (EditText) findViewById(R.id.editTextPersonName);
+        Button btnValider = (Button) findViewById(R.id.buttonValider);
         clearscroll(v);
         switch (etape) {
             case 0:
@@ -252,8 +253,8 @@ public class CreationGuidee extends AppCompatActivity {
                     textpres.setText(personnage);
                     chargerSpinner(R.id.spinnerRace, HistoriqueManager.getListHistorique());
                     text.setText(getText(R.string.historique));
-                    Button btnValider = (Button) findViewById(R.id.buttonValider);
-                    btnValider.setText("Valider Personnage");
+
+
                     etape = 4;
                 }else {
                     Toast.makeText(getBaseContext(), "Erreur, selectionnez votre classe !", Toast.LENGTH_SHORT).show();
@@ -264,18 +265,21 @@ public class CreationGuidee extends AppCompatActivity {
                 //Validation du personnage et passage à la page de validation
                 if (!raceChoisi.equals("")){
                     historiquePersonnage = raceChoisi;
+                    personnage = (textpres.getText().toString()) + "L'historique : " + raceChoisi+ "\n";
+                    textpres.setText(personnage);
                     etape = 5;
                     spinnerRace.setVisibility(View.GONE);
                     name.setVisibility(View.VISIBLE);
                     name.setText("");
-
+                    text.setText(getText(R.string.pseudo));
+                    btnValider.setText(R.string.validationPersonnage);
                 }else{
                     Toast.makeText(getBaseContext(), "Erreur, selectionnez votre historique !", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case 5 :
                 String pseudoJoueur = name.getText().toString();
-                if (!pseudoJoueur.equals("")){
+                if (pseudoJoueur.length() > 3){
                     Intent valider = new Intent(this, ValidationPersonnage.class);
                     valider.putExtra("nomPersonnage", nomPersonnage);
                     valider.putExtra("racePersonnage", racePersonnage);
@@ -285,6 +289,8 @@ public class CreationGuidee extends AppCompatActivity {
                     valider.putExtra("pseudoJoueur", pseudoJoueur);
                     startActivity(valider);
                     finish();
+                }else {
+                    Toast.makeText(getBaseContext(), "Erreur, votre pseudo n'est pas assez long !", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
@@ -303,6 +309,7 @@ public class CreationGuidee extends AppCompatActivity {
         TextView textpres = (TextView) findViewById(R.id.textViewPresentation);
         EditText name = (EditText) findViewById(R.id.editTextPersonName);
         Spinner spinnerRace = (Spinner) findViewById(R.id.spinnerRace);
+        Button btnValider = (Button) findViewById(R.id.buttonValider);
         clearscroll(v);
         switch (etape) {
             case 0:
@@ -335,7 +342,7 @@ public class CreationGuidee extends AppCompatActivity {
                 Log.d(dragon, "etapePrecedente sous-espèce: " + sousEspecePersonnage);
                 if (!sousEspecePersonnage.equals("")){
                     personnage = "Nom du personnage : " + nomPersonnage + "\n"
-                            + "la race : "+ racePersonnage + "\n";
+                            + "La race : "+ racePersonnage + "\n";
                     afficherSousEspece(v, racePersonnage);
                     text.setText(getText(R.string.sousEspece));
                     etape=2;
@@ -354,25 +361,47 @@ public class CreationGuidee extends AppCompatActivity {
                 if (!sousEspecePersonnage.equals("")){
                     if (racePersonnage.equals("Drakéide")){
                         personnage = "Nom du personnage : " + nomPersonnage + "\n"
-                                + "la race : "+ racePersonnage + "\n" +
+                                + "La race : "+ racePersonnage + "\n" +
                                 "La couleur : " + sousEspecePersonnage+ "\n";
                     }else{
                         personnage = "Nom du personnage : " + nomPersonnage + "\n"
-                                + "la race : "+ racePersonnage + "\n" +
+                                + "La race : "+ racePersonnage + "\n" +
                                 "La sous-espèce : " + sousEspecePersonnage + "\n";
                     }
                 }else {
                     personnage = "Nom du personnage : " + nomPersonnage + "\n"
-                            + "la race : "+ racePersonnage + "\n" ;
+                            + "La race : "+ racePersonnage + "\n" ;
                 }
+                classePersonnage = "";
                 textpres.setText(personnage);
                 chargerSpinner(R.id.spinnerRace, ClasseManager.getListClasse());
                 text.setText(getText(R.string.classe));
                 etape = 3;
                 break;
             case 5 :
+                if (!sousEspecePersonnage.equals("")){
+                    if (racePersonnage.equals("Drakéide")){
+                        personnage = "Nom du personnage : " + nomPersonnage + "\n"
+                                + "La race : "+ racePersonnage + "\n" +
+                                "La couleur : " + sousEspecePersonnage+ "\n"
+                                +"La classe : " + classePersonnage + "\n";
+                    }else{
+                        personnage = "Nom du personnage : " + nomPersonnage + "\n"
+                                + "La race : "+ racePersonnage + "\n" +
+                                "La sous-espèce : " + sousEspecePersonnage + "\n"
+                                +"La classe : " + classePersonnage + "\n";
+                    }
+                }else {
+                    personnage = "Nom du personnage : " + nomPersonnage + "\n"
+                            + "La race : "+ racePersonnage + "\n"
+                            +"La classe : " + classePersonnage + "\n";
+                }
+                historiquePersonnage = "";
+                textpres.setText(personnage);
                 spinnerRace.setVisibility(View.VISIBLE);
                 name.setVisibility(View.GONE);
+                text.setText(getText(R.string.historique));
+                btnValider.setText(R.string.valider);
                 etape = 4;
                 break;
         }
