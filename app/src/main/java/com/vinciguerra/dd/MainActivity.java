@@ -32,4 +32,9 @@ public class MainActivity extends AppCompatActivity {
         Intent guided = new Intent(this, CreationGuidee.class);
         startActivity(guided);
     }
+
+    public void fichePersonnages (View v ){
+        Intent fiche = new Intent(this, Personnage.class);
+        startActivity(fiche);
+    }
 }

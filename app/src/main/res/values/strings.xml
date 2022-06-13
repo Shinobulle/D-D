@@ -18,11 +18,22 @@
     <string name="classe">Choisissez votre classe</string>
     <string name="annuler">Annuler</string>
     <string name="accueil">Retour à l\'accueil</string>
+    <string name="validationNom">Votre nom :</string>
+    <string name="validationRace">Votre race :</string>
+    <string name="validationSousEspece">Votre sous-espèce :</string>
+    <string name="validationCouleur">Votre couleur :</string>
+    <string name="validationClasse">Votre classe :</string>
+    <string name="validationHistorique">Votre historique :</string>
+
+
+    <!-- Sélection dans la fiche -->
     <string name="carac">Amélioration de caractéristique.</string>
     <string name="drkCarac">Votre Force augmente de 2 et votre Charisme de 1.</string>
     <string name="titreVitesse">Vitesse.</string>
     <string name="vitesse">Votre vitesse de base est de 9 mètres.</string>
     <string name="titreAge">Âge.</string>
+
+    <!-- Drakéide -->
     <string name="drkAge">Les jeunes drakéides grandissent rapidement. Ils marchent juste quelques heures après l\'éclosion, atteignent la taille et le développement d\'un enfant humain de dix ans à l\'âge de 3 ans, et sont adultes à 15 ans. Ils vivent environ 80 ans.</string>
     <string name="titreTaille">Taille.</string>
     <string name="drkTaille">Les drakéides sont plus grands et plus lourds que les humains, mesurant plus de 1,80 mètre pour un poids moyen de près de 125 kg. Votre taille est Moyenne (M).</string>

@@ -129,6 +129,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/fiche"
+        android:onClick="fichePersonnages"
         app:layout_constraintBottom_toTopOf="@+id/horizontalBntBottomFiche_guideline"
         app:layout_constraintEnd_toStartOf="@+id/right_guideline"
         app:layout_constraintStart_toStartOf="@+id/left_guideline"

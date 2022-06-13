@@ -18,8 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreationGuidee"
-            android:exported="true"></activity>
+        <activity
+            android:name=".CreationGuidee"
+            android:exported="true" />
+        <activity
+            android:name=".ValidationPersonnage"
+            android:exported="true" />
+        <activity
+            android:name=".Personnage"
+            android:exported="true" />
     </application>
 
 </manifest>

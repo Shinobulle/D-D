@@ -2,9 +2,7 @@ package com.vinciguerra.dd;
 
 import android.content.Context;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -17,13 +15,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.vinciguerra.dd.modele.ClasseManager;
 import com.vinciguerra.dd.modele.HistoriqueManager;
 import com.vinciguerra.dd.modele.RaceManager;
-import com.vinciguerra.dd.races.Race;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -255,8 +253,30 @@ public class CreationGuidee extends AppCompatActivity {
                     textpres.setText(personnage);
                     chargerSpinner(R.id.spinnerRace, HistoriqueManager.getListHistorique());
                     text.setText(getText(R.string.historique));
+                    Button btnValider = (Button) findViewById(R.id.buttonValider);
+                    btnValider.setText("Valider Personnage");
                     etape = 4;
+                }else {
+                    Toast.makeText(getBaseContext(), "Erreur, selectionnez votre classe !", Toast.LENGTH_SHORT).show();
+
                 }
+                break;
+            case 4 :
+                //Validation du personnage et passage à la page de validation
+                if (!raceChoisi.equals("")){
+                    historiquePersonnage = raceChoisi;
+                    Intent valider = new Intent(this, ValidationPersonnage.class);
+                    valider.putExtra("nomPersonnage", nomPersonnage);
+                    valider.putExtra("racePersonnage", racePersonnage);
+                    valider.putExtra("sousEspecePersonnage", sousEspecePersonnage);
+                    valider.putExtra("classePersonnage", classePersonnage);
+                    valider.putExtra("historiquePersonnage", historiquePersonnage);
+                    startActivity(valider);
+                    finish();
+                }else{
+                    Toast.makeText(getBaseContext(), "Erreur, selectionnez votre historique !", Toast.LENGTH_SHORT).show();
+                }
+
                 break;
         }
 
