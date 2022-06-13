@@ -20,6 +20,7 @@ public class ConnexionSQLite extends SQLiteOpenHelper {
     private static final String SOUS_ESPECE_PERSONNAGE = "sousespece";
     private static final String CLASSE_PERSONNAGE = "classe";
     private static final String HISTORIQUE_PERSONNAGE = "historique";
+    private static final String PSEUDO_JOUEUR = "pseudojoueur";
 
     private static final String CREATE_BDD = "CREATE TABLE " + TABLE_NAME + " (" + ID_COL+ " TEXT PRIMARY KEY, " +RACE_COL+" TEXT)";
     private static final String INSERT_RACE = "INSERT INTO `races` (`race`) VALUES\n" +
@@ -39,7 +40,8 @@ public class ConnexionSQLite extends SQLiteOpenHelper {
             + RACE_PERSONNAGE + " TEXT, "
             + SOUS_ESPECE_PERSONNAGE + " TEXT,"
             + CLASSE_PERSONNAGE + " TEXT,"
-            + HISTORIQUE_PERSONNAGE + " TEXT) ";
+            + HISTORIQUE_PERSONNAGE + " TEXT, "
+            + PSEUDO_JOUEUR + " TEXT)";
 
     public ConnexionSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -62,7 +64,7 @@ public class ConnexionSQLite extends SQLiteOpenHelper {
     }
 
     public void ajoutNouveauPersonnage (String nomPersonnage, String racePersonnage, String sousEspecePersonnage,
-                                        String classePersonnage, String historiquePersonnage ) {
+                                        String classePersonnage, String historiquePersonnage, String pseudoJoueur ) {
 
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -80,6 +82,7 @@ public class ConnexionSQLite extends SQLiteOpenHelper {
         values.put(SOUS_ESPECE_PERSONNAGE, sousEspecePersonnage);
         values.put(CLASSE_PERSONNAGE, classePersonnage);
         values.put(HISTORIQUE_PERSONNAGE, historiquePersonnage);
+        values.put(PSEUDO_JOUEUR, pseudoJoueur);
 
         // after adding all values we are passing
         // content values to our table.

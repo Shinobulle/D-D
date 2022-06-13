@@ -10,17 +10,37 @@ import java.util.Map;
 
 public class PersonnageManager {
 
-    public static Map<String, String> getListPersonnage(Context context){
+    public static Map<String, String> getListPseudo(Context context){
 
         ConnexionSQLite connexion = new ConnexionSQLite(context,"DandD", null, 1 );
         SQLiteDatabase bdd = connexion.getWritableDatabase();
-        String sqlRequete = "SELECT nom, race FROM personnages";
+        String sqlRequete = "SELECT pseudojoueur, nom FROM personnages";
         Map<String, String> tPersonnages = new HashMap<String, String>();
         Cursor c = bdd.rawQuery(sqlRequete,null);
 
         if(c.getCount() > 0){
             c.moveToFirst();
-            if (c.getCount() == 1){
+            if (c.getCount() < 2){
+                tPersonnages.put(c.getString(0),c.getString(1));
+            }
+            while(c.moveToNext()){
+                tPersonnages.put(c.getString(0),c.getString(1));
+            }
+            c.close();}
+        return tPersonnages;
+    }
+
+    public static Map<String, String> getListPersonnage(Context context, String pseudoJoueur){
+
+        ConnexionSQLite connexion = new ConnexionSQLite(context,"DandD", null, 1 );
+        SQLiteDatabase bdd = connexion.getWritableDatabase();
+        String sqlRequete = "SELECT nom, race FROM personnages WHERE pseudojoueur = '" + pseudoJoueur + "'";
+        Map<String, String> tPersonnages = new HashMap<String, String>();
+        Cursor c = bdd.rawQuery(sqlRequete,null);
+
+        if(c.getCount() > 0){
+            c.moveToFirst();
+            if (c.getCount() < 2){
                 tPersonnages.put(c.getString(0),c.getString(1));
             }
             while(c.moveToNext()){

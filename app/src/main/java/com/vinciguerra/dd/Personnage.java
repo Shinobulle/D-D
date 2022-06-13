@@ -34,9 +34,27 @@ public class Personnage extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.personnage);
-        chargerSpinner(R.id.spinnerPersonnage, PersonnageManager.getListPersonnage(getBaseContext()));
+        chargerSpinner(R.id.spinnerPseudo, PersonnageManager.getListPseudo(getBaseContext()));
+        Spinner spinnerPseudo = (Spinner) findViewById(R.id.spinnerPseudo);
         Log.d("Dragon", "onCreate: test 1");
         Spinner spinnerPersonnage = (Spinner) findViewById(R.id.spinnerPersonnage);
+        spinnerPseudo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                String pseudo = parentView.getItemAtPosition(position).toString();
+                if (!pseudo.equals("")){
+                    spinnerPersonnage.setVisibility(View.VISIBLE);
+                    chargerSpinner(R.id.spinnerPersonnage, PersonnageManager.getListPersonnage(getBaseContext(), pseudo));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                TextView text = (TextView) findViewById(R.id.textViewPresentation);
+                text.setText(getText(R.string.pres));
+            }
+        });
+
         Log.d("Dragon", "onCreate: test 2");
         spinnerPersonnage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

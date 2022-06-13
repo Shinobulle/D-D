@@ -27,9 +27,10 @@ public class ValidationPersonnage extends AppCompatActivity {
         String sousEspecePersonnage = personnage.getStringExtra("sousEspecePersonnage");
         String classePersonnage = personnage.getStringExtra("classePersonnage");
         String historiquePersonnage = personnage.getStringExtra("historiquePersonnage");
+        String pseudoJoueur = personnage.getStringExtra("pseudoJoueur");
         ConnexionSQLite connexion = new ConnexionSQLite(ValidationPersonnage.this,"DandD", null, 1 );
-        connexion.ajoutNouveauPersonnage(nomPersonnage, racePersonnage,
-                sousEspecePersonnage, classePersonnage, historiquePersonnage);
+        connexion.ajoutNouveauPersonnage(nomPersonnage, racePersonnage, sousEspecePersonnage,
+                classePersonnage, historiquePersonnage, pseudoJoueur);
 
         TextView nom = (TextView) findViewById(R.id.textViewNom);
         TextView race = (TextView) findViewById(R.id.textViewRace);

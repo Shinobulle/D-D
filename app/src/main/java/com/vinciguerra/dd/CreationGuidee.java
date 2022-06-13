@@ -177,11 +177,11 @@ public class CreationGuidee extends AppCompatActivity {
         TextView textpres = (TextView) findViewById(R.id.textViewPresentation);
         Spinner spinnerRace = (Spinner) findViewById(R.id.spinnerRace);
         String raceChoisi = (spinnerRace).getSelectedItem().toString();
-
+        EditText name = (EditText) findViewById(R.id.editTextPersonName);
+        clearscroll(v);
         switch (etape) {
             case 0:
                 // Pour passer du prénom à la race
-                EditText name = (EditText) findViewById(R.id.editTextPersonName);
                 String name2 = name.getText().toString();
                 if (name2.length() < 4) {
                     Toast.makeText(getBaseContext(), "Le nom de votre personnage n'est pas assez long ou vide ", Toast.LENGTH_SHORT).show();
@@ -204,7 +204,7 @@ public class CreationGuidee extends AppCompatActivity {
                     Log.d(dragon, "etapeSuivanteCase 1: " + etape);
                     personnage = (textpres.getText().toString()) + "La race : " + raceChoisi + "\n";
                     textpres.setText(personnage);
-                    clearscroll(v);
+
                     if (raceChoisi.equals("Elfe")||raceChoisi.equals("Halfelin")||raceChoisi.equals("Nain")||
                             raceChoisi.equals("Gnome")||raceChoisi.equals("Drakéide")){
                         etape = 2;
@@ -228,7 +228,7 @@ public class CreationGuidee extends AppCompatActivity {
             case 2:
                 // On passe de la sous-espèce à la classe
                 if (!raceChoisi.equals("")){
-                    clearscroll(v);
+
                     if (raceChoisi.equals("Drakéide")){
                         personnage = (textpres.getText().toString()) + "La couleur : " + raceChoisi+ "\n";
 
@@ -247,7 +247,6 @@ public class CreationGuidee extends AppCompatActivity {
             case 3 :
                 //on passe de la classe à l'historique
                 if (!raceChoisi.equals("")){
-                    clearscroll(v);
                     classePersonnage = raceChoisi;
                     personnage = (textpres.getText().toString()) + "La classe : " + raceChoisi+ "\n";
                     textpres.setText(personnage);
@@ -265,18 +264,28 @@ public class CreationGuidee extends AppCompatActivity {
                 //Validation du personnage et passage à la page de validation
                 if (!raceChoisi.equals("")){
                     historiquePersonnage = raceChoisi;
+                    etape = 5;
+                    spinnerRace.setVisibility(View.GONE);
+                    name.setVisibility(View.VISIBLE);
+                    name.setText("");
+
+                }else{
+                    Toast.makeText(getBaseContext(), "Erreur, selectionnez votre historique !", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case 5 :
+                String pseudoJoueur = name.getText().toString();
+                if (!pseudoJoueur.equals("")){
                     Intent valider = new Intent(this, ValidationPersonnage.class);
                     valider.putExtra("nomPersonnage", nomPersonnage);
                     valider.putExtra("racePersonnage", racePersonnage);
                     valider.putExtra("sousEspecePersonnage", sousEspecePersonnage);
                     valider.putExtra("classePersonnage", classePersonnage);
                     valider.putExtra("historiquePersonnage", historiquePersonnage);
+                    valider.putExtra("pseudoJoueur", pseudoJoueur);
                     startActivity(valider);
                     finish();
-                }else{
-                    Toast.makeText(getBaseContext(), "Erreur, selectionnez votre historique !", Toast.LENGTH_SHORT).show();
                 }
-
                 break;
         }
 
@@ -360,6 +369,11 @@ public class CreationGuidee extends AppCompatActivity {
                 chargerSpinner(R.id.spinnerRace, ClasseManager.getListClasse());
                 text.setText(getText(R.string.classe));
                 etape = 3;
+                break;
+            case 5 :
+                spinnerRace.setVisibility(View.VISIBLE);
+                name.setVisibility(View.GONE);
+                etape = 4;
                 break;
         }
     }
