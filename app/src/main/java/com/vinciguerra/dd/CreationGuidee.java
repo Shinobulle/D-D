@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.vinciguerra.dd.modele.ClasseManager;
 import com.vinciguerra.dd.modele.HistoriqueManager;
+import com.vinciguerra.dd.modele.PersonnageManager;
 import com.vinciguerra.dd.modele.RaceManager;
 
 
@@ -75,7 +76,10 @@ public class CreationGuidee extends AppCompatActivity {
                 TextView trait4 = (TextView) findViewById(R.id.textViewTrait4);
                 TextView titreLangue = (TextView) findViewById(R.id.textViewTitreLangues);
                 TextView langue = (TextView) findViewById(R.id.textViewLangue);
-                clearscroll(selectedItemView);
+                if (etape != 2){
+                    clearscroll(selectedItemView);
+                }
+
                 switch (etape) {
                     case 1 :
                         String race = parentView.getItemAtPosition(position).toString();
@@ -110,7 +114,6 @@ public class CreationGuidee extends AppCompatActivity {
                             clearscroll(selectedItemView);
                         }
                         break;
-
                     case 3 :
                         String classe = parentView.getItemAtPosition(position).toString();
                         if (!classe.equals("")){
@@ -205,16 +208,16 @@ public class CreationGuidee extends AppCompatActivity {
                     Log.d(dragon, "etapeSuivanteCase 1: " + etape);
                     personnage = (textpres.getText().toString()) + "La race : " + raceChoisi + "\n";
                     textpres.setText(personnage);
-
+                    afficherSousEspece(v, raceChoisi);
                     if (raceChoisi.equals("Elfe")||raceChoisi.equals("Halfelin")||raceChoisi.equals("Nain")||
                             raceChoisi.equals("Gnome")||raceChoisi.equals("Drakéide")){
                         etape = 2;
-                        afficherSousEspece(v, raceChoisi);
                         if (raceChoisi.equals("Drakéide")){
                             text.setText(getText(R.string.choixCouleur));
                         }else{
                             text.setText(getText(R.string.sousEspece));
                         }
+
                     }
                     else{
                         chargerSpinner(R.id.spinnerRace, ClasseManager.getListClasse());
@@ -230,7 +233,7 @@ public class CreationGuidee extends AppCompatActivity {
                 // On passe de la sous-espèce à la classe
                 if (!raceChoisi.equals("")){
 
-                    if (raceChoisi.equals("Drakéide")){
+                    if (racePersonnage.equals("Drakéide")){
                         personnage = (textpres.getText().toString()) + "La couleur : " + raceChoisi+ "\n";
 
                     }else{
@@ -280,15 +283,19 @@ public class CreationGuidee extends AppCompatActivity {
             case 5 :
                 String pseudoJoueur = name.getText().toString();
                 if (pseudoJoueur.length() > 3){
-                    Intent valider = new Intent(this, ValidationPersonnage.class);
-                    valider.putExtra("nomPersonnage", nomPersonnage);
-                    valider.putExtra("racePersonnage", racePersonnage);
-                    valider.putExtra("sousEspecePersonnage", sousEspecePersonnage);
-                    valider.putExtra("classePersonnage", classePersonnage);
-                    valider.putExtra("historiquePersonnage", historiquePersonnage);
-                    valider.putExtra("pseudoJoueur", pseudoJoueur);
-                    startActivity(valider);
-                    finish();
+                    if (!PersonnageManager.getPersonnageExiste(getBaseContext(), nomPersonnage, pseudoJoueur)){
+                        Intent valider = new Intent(this, ValidationPersonnage.class);
+                        valider.putExtra("nomPersonnage", nomPersonnage);
+                        valider.putExtra("racePersonnage", racePersonnage);
+                        valider.putExtra("sousEspecePersonnage", sousEspecePersonnage);
+                        valider.putExtra("classePersonnage", classePersonnage);
+                        valider.putExtra("historiquePersonnage", historiquePersonnage);
+                        valider.putExtra("pseudoJoueur", pseudoJoueur);
+                        startActivity(valider);
+                        finish();
+                    }else {
+                        Toast.makeText(getBaseContext(), "Erreur, votre personnage existe déjà !", Toast.LENGTH_SHORT).show();
+                    }
                 }else {
                     Toast.makeText(getBaseContext(), "Erreur, votre pseudo n'est pas assez long !", Toast.LENGTH_SHORT).show();
                 }

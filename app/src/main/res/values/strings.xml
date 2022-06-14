@@ -26,6 +26,8 @@
     <string name="validationHistorique">Votre historique :</string>
     <string name="pseudo">Choisissez votre pseudo</string>
     <string name="validationPersonnage">Valider Personnage</string>
+    <string name="votrePseudo">Sélectionnez un joueur</string>
+    <string name="votrePersonnage">Sélectionnez un personnage</string>
 
 
     <!-- Sélection dans la fiche -->

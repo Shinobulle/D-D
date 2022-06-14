@@ -29,6 +29,7 @@ import java.util.Collections;
 import java.util.Map;
 
 public class Personnage extends AppCompatActivity {
+    public String pseudojoueur = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,19 +42,21 @@ public class Personnage extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 String pseudo = parentView.getItemAtPosition(position).toString();
+                TextView votrePersonnage = (TextView) findViewById(R.id.textViewVotrePersonnage);
                 if (!pseudo.equals("")){
+                    pseudojoueur = pseudo;
                     spinnerPersonnage.setVisibility(View.VISIBLE);
+                    votrePersonnage.setVisibility(View.VISIBLE);
                     chargerSpinner(R.id.spinnerPersonnage, PersonnageManager.getListPersonnage(getBaseContext(), pseudo));
                 }else {
                     clearscroll(selectedItemView);
                     spinnerPersonnage.setVisibility(View.INVISIBLE);
+                    votrePersonnage.setVisibility(View.INVISIBLE);
                 }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-                TextView text = (TextView) findViewById(R.id.textViewPresentation);
-                text.setText(getText(R.string.pres));
             }
         });
 
@@ -84,10 +87,10 @@ public class Personnage extends AppCompatActivity {
                 if (!personnage.equals("")){
                     titreNom.setVisibility(View.VISIBLE);
                     nom.setText(personnage);
-                    String racePersonnage = getRacePersonnage(getBaseContext(), personnage);
-                    String sousEspecePersonnage = getSousEspecePersonnage(getBaseContext(), personnage);
-                    String classePersonnage = getClassePersonnage(getBaseContext(), personnage);
-                    String historiquePersonnage = getHistoriquePersonnage(getBaseContext(), personnage);
+                    String racePersonnage = getRacePersonnage(getBaseContext(), personnage, pseudojoueur);
+                    String sousEspecePersonnage = getSousEspecePersonnage(getBaseContext(), personnage, pseudojoueur);
+                    String classePersonnage = getClassePersonnage(getBaseContext(), personnage, pseudojoueur);
+                    String historiquePersonnage = getHistoriquePersonnage(getBaseContext(), personnage, pseudojoueur);
                     titreRace.setVisibility(View.VISIBLE);
                     race.setText(racePersonnage);
                     RaceManager.getRace(racePersonnage, getBaseContext());
@@ -113,6 +116,7 @@ public class Personnage extends AppCompatActivity {
 
                         }
                         sousEspece.setText(sousEspecePersonnage);
+                        titreSousEspece.setVisibility(View.VISIBLE);
                     }else {
                         titreSousEspece.setVisibility(View.GONE);
                         sousEspece.setVisibility(View.GONE);
@@ -160,6 +164,8 @@ public class Personnage extends AppCompatActivity {
         TextView trait3 = (TextView) findViewById(R.id.textViewTrait3);
         TextView titreTrait4 = (TextView) findViewById(R.id.textViewTitreTrait4);
         TextView trait4 = (TextView) findViewById(R.id.textViewTrait4);
+        TextView titreSousEspece = (TextView) findViewById(R.id.textViewTitreSousEspece);
+        TextView sousEspece = (TextView) findViewById(R.id.textViewSousEspece);
         TextView titreClasse = (TextView) findViewById(R.id.textViewTitreClasse);
         TextView classe = (TextView) findViewById(R.id.textViewClasse);
         TextView titreHistorique = (TextView) findViewById(R.id.textViewTitreHistorique);
@@ -176,6 +182,8 @@ public class Personnage extends AppCompatActivity {
         trait3.setText("");
         titreTrait4.setText("");
         trait4.setText("");
+        sousEspece.setText("");
+        titreSousEspece.setVisibility(View.INVISIBLE);
         titreClasse.setVisibility(View.INVISIBLE);
         classe.setText("");
         titreHistorique.setVisibility(View.INVISIBLE);

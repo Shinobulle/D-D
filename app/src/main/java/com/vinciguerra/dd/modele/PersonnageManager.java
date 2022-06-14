@@ -46,10 +46,10 @@ public class PersonnageManager {
         return tPersonnages;
     }
 
-    public static String getRacePersonnage (Context context, String nom){
+    public static String getRacePersonnage (Context context, String nom, String pseudo){
         ConnexionSQLite connexion = new ConnexionSQLite(context,"DandD", null, 1 );
         SQLiteDatabase bdd = connexion.getWritableDatabase();
-        String sqlRequete = "SELECT race FROM personnages where nom = '"+ nom +"'" ;
+        String sqlRequete = "SELECT race FROM personnages where nom = '"+ nom +"' AND pseudojoueur = '"+ pseudo +"'" ;
         String racePersonnage = null;
         Cursor c = bdd.rawQuery(sqlRequete,null);
 
@@ -62,10 +62,10 @@ public class PersonnageManager {
         return racePersonnage;
     }
 
-    public static String getSousEspecePersonnage (Context context, String nom){
+    public static String getSousEspecePersonnage (Context context, String nom, String pseudo){
         ConnexionSQLite connexion = new ConnexionSQLite(context,"DandD", null, 1 );
         SQLiteDatabase bdd = connexion.getWritableDatabase();
-        String sqlRequete = "SELECT sousespece FROM personnages where nom = '"+ nom +"'" ;
+        String sqlRequete = "SELECT sousespece FROM personnages where nom = '"+ nom + "' AND pseudojoueur = '"+ pseudo +"'";
         String sousEspecePersonnage = null;
         Cursor c = bdd.rawQuery(sqlRequete,null);
 
@@ -78,10 +78,10 @@ public class PersonnageManager {
         return sousEspecePersonnage;
     }
 
-    public static String getClassePersonnage (Context context, String nom){
+    public static String getClassePersonnage (Context context, String nom, String pseudo){
         ConnexionSQLite connexion = new ConnexionSQLite(context,"DandD", null, 1 );
         SQLiteDatabase bdd = connexion.getWritableDatabase();
-        String sqlRequete = "SELECT classe FROM personnages where nom = '"+ nom +"'" ;
+        String sqlRequete = "SELECT classe FROM personnages where nom = '"+ nom +"' AND pseudojoueur = '"+ pseudo +"'" ;
         String racePersonnage = null;
         Cursor c = bdd.rawQuery(sqlRequete,null);
 
@@ -94,10 +94,10 @@ public class PersonnageManager {
         return racePersonnage;
     }
 
-    public static String getHistoriquePersonnage (Context context, String nom){
+    public static String getHistoriquePersonnage (Context context, String nom, String pseudo){
         ConnexionSQLite connexion = new ConnexionSQLite(context,"DandD", null, 1 );
         SQLiteDatabase bdd = connexion.getWritableDatabase();
-        String sqlRequete = "SELECT historique FROM personnages where nom = '"+ nom +"'" ;
+        String sqlRequete = "SELECT historique FROM personnages where nom = '"+ nom +"' AND pseudojoueur = '"+ pseudo +"'" ;
         String racePersonnage = null;
         Cursor c = bdd.rawQuery(sqlRequete,null);
 
@@ -108,5 +108,18 @@ public class PersonnageManager {
             }
         }
         return racePersonnage;
+    }
+
+    public static Boolean getPersonnageExiste (Context context, String nom, String pseudo){
+        ConnexionSQLite connexion = new ConnexionSQLite(context,"DandD", null, 1 );
+        SQLiteDatabase bdd = connexion.getWritableDatabase();
+        String sqlRequete = "SELECT * FROM personnages where nom = '"+ nom +"' AND pseudojoueur = '"+ pseudo +"'" ;
+        Boolean personnageExiste = false;
+        Cursor c = bdd.rawQuery(sqlRequete,null);
+
+        if(c.getCount() > 0) {
+            personnageExiste = true;
+        }
+        return personnageExiste;
     }
 }
