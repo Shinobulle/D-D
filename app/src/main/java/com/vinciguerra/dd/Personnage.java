@@ -60,7 +60,6 @@ public class Personnage extends AppCompatActivity {
             }
         });
 
-
         spinnerPersonnage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -84,6 +83,7 @@ public class Personnage extends AppCompatActivity {
                 TextView historique = (TextView) findViewById(R.id.textViewHistorique);
                 clearscroll(selectedItemView);
                 String personnage = parentView.getItemAtPosition(position).toString();
+
                 if (!personnage.equals("")){
                     titreNom.setVisibility(View.VISIBLE);
                     nom.setText(personnage);

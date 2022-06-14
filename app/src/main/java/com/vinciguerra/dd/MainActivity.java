@@ -27,12 +27,18 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /*
+    * Permet d'aller vers l'activité CreationGuidee
+    */
     public void guidedCreation  (View v)
     {
         Intent guided = new Intent(this, CreationGuidee.class);
         startActivity(guided);
     }
 
+    /*
+     * Permet d'aller vers l'activité Personnage
+     */
     public void fichePersonnages (View v ){
         Intent fiche = new Intent(this, Personnage.class);
         startActivity(fiche);
